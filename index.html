@@ -314,6 +314,17 @@ body{
 .wc-pill{font-size:10px;font-weight:600;padding:2px 8px;border-radius:100px;background:var(--indigo-l);color:var(--indigo)}
 .wc-full{grid-column:1/-1}
 @media(max-width:640px){.weather-grid{grid-template-columns:1fr}}
+.daily-temps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px}
+@media(max-width:640px){.daily-temps{grid-template-columns:repeat(2,1fr)}}
+.dt-card{background:rgba(255,255,255,.68);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.82);border-radius:16px;padding:13px 15px;box-shadow:0 2px 20px rgba(99,102,241,.07),0 1px 3px rgba(0,0,0,.04)}
+.dt-dhead{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px;padding-bottom:7px;border-bottom:1px solid var(--sep)}
+.dt-day{font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--indigo)}
+.dt-date{font-size:12px;color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+.dt-row{display:flex;align-items:center;justify-content:space-between;padding:2.5px 0;font-variant-numeric:tabular-nums}
+.dt-lbl{font-size:12px;color:var(--text2);font-weight:600}
+.dt-val{font-size:16px;font-weight:800;color:var(--text)}
+.dt-val.dt-mid{color:var(--text2);font-weight:700}
+.dt-val.dt-lo{color:var(--indigo);font-weight:800}
 
 /* ── SPOT IMAGE GRID ── */
 .spot-img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:4px}
@@ -1093,7 +1104,7 @@ body.dark .pack-summary-text{color:rgba(255,255,255,.65)}
       <div class="wc-icon">🍂</div>
       <div>
         <div class="wc-city">Seoul · Mid-October</div>
-        <div class="wc-temp">9 – 20°C <span class="wc-temp-f">(48–68°F)</span></div>
+        <div class="wc-temp">8 – 21°C <span class="wc-temp-f">(46–70°F)</span></div>
         <div class="wc-desc">Peak autumn — crisp sunny days, chilly mornings and evenings. Ginkgo trees turning gold across the city.</div>
         <div class="wc-pills"><span class="wc-pill">☀️ Mostly clear</span><span class="wc-pill">🍁 Autumn foliage</span><span class="wc-pill">🌧 Low rain chance</span></div>
       </div>
@@ -1106,6 +1117,58 @@ body.dark .pack-summary-text{color:rgba(255,255,255,.65)}
         <div class="wc-desc">T-shirt or light knit for daytime, warm jacket for evenings by the Han River. Comfortable shoes — Seoul days mean 15k+ steps.</div>
         <div class="wc-pills"><span class="wc-pill">🧥 Jacket at night</span><span class="wc-pill">👟 Walking shoes</span></div>
       </div>
+    </div>
+  </div>
+
+  <div class="callout">📉 <strong>Day → night swing.</strong> Autumn Seoul is dry and clear — mild afternoons, then a fast drop after sunset (~18:00), often a ~10°C gap between the daytime high and the pre-dawn low. That's the whole case for layers. Figures below are typical mid-October averages; the real forecast lands ~2 weeks before you fly.</div>
+  <div class="daily-temps">
+    <div class="dt-card">
+      <div class="dt-dhead"><span class="dt-day">Sat</span><span class="dt-date">10 Oct</span></div>
+      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">21°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">14°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">11°</span></div>
+    </div>
+    <div class="dt-card">
+      <div class="dt-dhead"><span class="dt-day">Sun</span><span class="dt-date">11 Oct</span></div>
+      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">21°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">14°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">11°</span></div>
+    </div>
+    <div class="dt-card">
+      <div class="dt-dhead"><span class="dt-day">Mon</span><span class="dt-date">12 Oct</span></div>
+      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">20°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">14°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">10°</span></div>
+    </div>
+    <div class="dt-card">
+      <div class="dt-dhead"><span class="dt-day">Tue</span><span class="dt-date">13 Oct</span></div>
+      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">20°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">13°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">10°</span></div>
+    </div>
+    <div class="dt-card">
+      <div class="dt-dhead"><span class="dt-day">Wed</span><span class="dt-date">14 Oct</span></div>
+      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">19°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">13°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">9°</span></div>
+    </div>
+    <div class="dt-card">
+      <div class="dt-dhead"><span class="dt-day">Thu</span><span class="dt-date">15 Oct</span></div>
+      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">19°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">13°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">9°</span></div>
+    </div>
+    <div class="dt-card">
+      <div class="dt-dhead"><span class="dt-day">Fri</span><span class="dt-date">16 Oct</span></div>
+      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">18°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">12°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">8°</span></div>
+    </div>
+    <div class="dt-card">
+      <div class="dt-dhead"><span class="dt-day">Sat</span><span class="dt-date">17 Oct</span></div>
+      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">18°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">12°</span></div>
+      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">8°</span></div>
     </div>
   </div>
 
@@ -1170,7 +1233,7 @@ body.dark .pack-summary-text{color:rgba(255,255,255,.65)}
 
   </div>
 
-  <div class="callout">🤝 <strong>Meeting Shuen — still to decide.</strong> Any weekday works: Mon 12, Tue 13, Wed 14 or Thu 15. <strong>Thursday 15 is the easiest slot</strong> — it's a flex day with nothing booked. Friday only works as a morning meetup (Yanni is at Belle Studio in the afternoon). Once Shuen confirms, shuffle that day's plan into another slot.</div>
+  <div class="callout">🤝 <strong>Meeting Shuen — one of Mon 12 / Tue 13 / Wed 14.</strong> Shuen's free Monday to Wednesday; pin the exact day with them. All three are tagged "Shuen option" below — once it's set, keep that day light and shuffle its plan into another slot.</div>
 
   <div class="sh"><h2>🗺️ Trip at a Glance</h2><p>Eight days in Seoul</p></div>
 
@@ -1189,7 +1252,7 @@ body.dark .pack-summary-text{color:rgba(255,255,255,.65)}
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 3 · </span>Mon, 12 Oct</div><div class="tl-event">Seongsu + Seoul Forest</div><div class="tl-detail">Halmeoni Recipe lunch · Seoul Forest ginkgo · Seongsu cafes &amp; pop-ups · (Shuen option)</div></div>
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 4 · </span>Tue, 13 Oct</div><div class="tl-event">Dongdaemun + Gwangjang</div><div class="tl-detail">Gwangjang Market grazing · DDP · Jinokhwa dak hanmari dinner · Cheonggyecheon night walk · (Shuen option)</div></div>
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 5 · </span>Wed, 14 Oct</div><div class="tl-event">Gangnam — Sinsa + Dosan Park</div><div class="tl-detail">London Bagel Museum brunch · Garosu-gil · Nudake · Haus Dosan · Apgujeong · (Shuen option)</div></div>
-        <div class="tl-item"><div class="tl-dot" style="background:linear-gradient(135deg,#6366f1,#3b82f6);box-shadow:0 0 0 2px rgba(99,102,241,.2)"></div><div class="tl-date"><span class="tl-daynum">Day 6 · </span>Thu, 15 Oct</div><div class="tl-event">Flex Day — best Shuen slot</div><div class="tl-detail">Option A: Nami Island / DMZ day trip · Option B: Hongdae + Yeonnam-dong · Han River picnic at night</div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:linear-gradient(135deg,#6366f1,#3b82f6);box-shadow:0 0 0 2px rgba(99,102,241,.2)"></div><div class="tl-date"><span class="tl-daynum">Day 6 · </span>Thu, 15 Oct</div><div class="tl-event">Flex Day — Han River finale</div><div class="tl-detail">Option A: Nami Island / DMZ day trip · Option B: Hongdae + Yeonnam-dong · Han River picnic at night</div></div>
         <div class="tl-item"><div class="tl-dot" style="background:#f97316;box-shadow:0 0 0 2px rgba(249,115,22,.2)"></div><div class="tl-date"><span class="tl-daynum">Day 7 · </span>Fri, 16 Oct</div><div class="tl-event">Belle Studio (PM) · Farewell Dinner</div><div class="tl-detail">Morning shopping · Yanni → Belle Studio lip treatment · Mad free time · farewell dinner + Banpo Bridge fountain</div></div>
       </div>
 
@@ -1207,7 +1270,7 @@ body.dark .pack-summary-text{color:rgba(255,255,255,.65)}
 <!-- ════════════════ SEOUL ════════════════ -->
 <div id="tab-seoul" class="tab-content">
 
-  <div class="callout">🤝 <strong>Shuen day still open</strong> — Mon, Tue, Wed or Thu all work. Thursday (Flex Day) is the easiest to give up. Days can swap freely.</div>
+  <div class="callout">🤝 <strong>Shuen — one of Mon 12 / Tue 13 / Wed 14</strong> (their free window). Pick the exact day with them; those three are marked "Shuen option" and can swap freely.</div>
 
   <div class="flt-section-label">📅 Schedule</div>
   <div class="day-pills">
@@ -1481,7 +1544,7 @@ body.dark .pack-summary-text{color:rgba(255,255,255,.65)}
     <div class="card">
       <div class="dp-dayhead">
         <div class="dp-daytitle">Day 6 — Thursday, 15 October</div>
-        <div class="dp-daysub">Flex Day · Best slot for Shuen · Han River sunset finale 🌅</div>
+        <div class="dp-daysub">Flex Day · Han River sunset finale 🌅</div>
       </div>
       <div class="dp-timeline">
         <div class="dp-item">
@@ -2284,7 +2347,7 @@ body.dark .pack-summary-text{color:rgba(255,255,255,.65)}
         <tr><td><strong>12 Oct</strong></td><td>Mon</td><td>Halmeoni Recipe lunch · Seoul Forest · Seongsu-dong · (Shuen option)</td></tr>
         <tr><td><strong>13 Oct</strong></td><td>Tue</td><td>Gwangjang Market · DDP · Jinokhwa dak hanmari dinner · (Shuen option)</td></tr>
         <tr><td><strong>14 Oct</strong></td><td>Wed</td><td>London Bagel Museum · Garosu-gil · Dosan Park · Apgujeong · (Shuen option)</td></tr>
-        <tr><td><strong>15 Oct</strong></td><td>Thu</td><td>Flex day — Nami Island / DMZ trip or Hongdae · best Shuen slot · Han River night</td></tr>
+        <tr><td><strong>15 Oct</strong></td><td>Thu</td><td>Flex day — Nami Island / DMZ trip or Hongdae · Cafe Pokpo · Han River night</td></tr>
         <tr><td><strong>16 Oct</strong></td><td>Fri</td><td>Morning shopping · Yanni → Belle Studio (PM) · farewell dinner · Banpo fountain</td></tr>
         <tr><td><strong>17 Oct</strong></td><td>Sat</td><td>Fly ICN → SIN · SQ 601 16:45→22:00 · at airport by 13:45</td></tr>
       </tbody>
