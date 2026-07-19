@@ -1047,6 +1047,20 @@ body.dark .pack-progress-bar{background:rgba(255,255,255,.08)}
 body.dark .pack-summary{background:rgba(99,102,241,.12);border-color:rgba(99,102,241,.2)}
 body.dark .pack-summary-text{color:rgba(255,255,255,.65)}
 
+/* ── HERO SPLIT LAYOUT ── */
+.hero-inner.hero-split{max-width:960px;display:flex;align-items:center;justify-content:center;gap:56px}
+.hero-split .hero-text{flex:1 1 auto;min-width:0;text-align:left}
+.hero-split .hero-text .hero-route{margin-bottom:30px}
+.hero-split .polaroid-wrap{margin-top:0;flex:0 0 290px}
+.hero-split .polaroid{transform:rotate(3deg)}
+.hero-split .polaroid:hover{transform:rotate(0deg) scale(1.03)}
+@media(max-width:760px){
+  .hero-inner.hero-split{flex-direction:column;gap:0}
+  .hero-split .hero-text{text-align:center}
+  .hero-split .hero-text .hero-route{margin-bottom:36px}
+  .hero-split .polaroid-wrap{margin-top:34px;flex:0 0 auto}
+}
+
 /* ── POLAROID ── */
 .hand{font-family:'Caveat','Bradley Hand','Segoe Script','Comic Sans MS',cursive}
 .polaroid-wrap{display:flex;justify-content:center;margin-top:34px}
@@ -1104,13 +1118,15 @@ body.dark .polaroid-caption{color:#4c465e}
 <!-- ══ HERO ══ -->
 <div class="hero">
   <div class="hero-mesh"></div>
-  <div class="hero-inner">
-    <div class="hero-route">
-      <div class="hero-route-icon">✈️</div>
-      <span class="hero-route-text">Singapore → Seoul</span>
+  <div class="hero-inner hero-split">
+    <div class="hero-text">
+      <div class="hero-route">
+        <div class="hero-route-icon">✈️</div>
+        <span class="hero-route-text">Singapore → Seoul</span>
+      </div>
+      <h1>Our Seoul <em>Autumn</em></h1>
+      <div class="hero-dates">10 Oct – 17 Oct 2026 · Yanni + Mad</div>
     </div>
-    <h1>Our Seoul <em>Autumn</em></h1>
-    <div class="hero-dates">10 Oct – 17 Oct 2026 · Yanni + Mad</div>
     <div class="polaroid-wrap">
       <div class="polaroid">
         <div class="polaroid-tape"></div>
