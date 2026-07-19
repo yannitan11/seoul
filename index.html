@@ -325,6 +325,9 @@ body{
 .dt-val{font-size:16px;font-weight:800;color:var(--text)}
 .dt-val.dt-mid{color:var(--text2);font-weight:700}
 .dt-val.dt-lo{color:var(--indigo);font-weight:800}
+body.dark .dt-card{background:rgba(26,26,36,.9);border-color:rgba(255,255,255,.08)}
+body.dark .dt-day{color:#a5b4fc}
+body.dark .dt-val.dt-lo{color:#a5b4fc}
 
 /* ── SPOT IMAGE GRID ── */
 .spot-img-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:4px}
@@ -1323,12 +1326,12 @@ body.dark .polaroid-caption{color:#4c465e}
       <div class="tl-loc" onclick="toggleTlGroup(this)"><span class="tl-loc-label">🇰🇷 &nbsp;Seoul</span><span class="tl-loc-line"></span><span class="tl-loc-chevron">▼</span></div>
       <div class="tl-group-body">
         <div class="tl-item"><div class="tl-dot key"></div><div class="tl-date"><span class="tl-daynum">Day 1 · </span>Sat, 10 Oct</div><div class="tl-event">Arrival · Seochon · Garosu-gil</div><div class="tl-detail">Tosokchon lunch · OFR + GRANHAND · Nest café · Tongin Market · check-in · Ralph Lauren + ARKET on Garosu-gil · Acid House dinner</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 2 · </span>Sun, 11 Oct</div><div class="tl-event">Seongbuk-dong · Slow Sunday</div><div class="tl-detail">Seongbuk cafés + Chaekbonyang + walk street · Suyeonsanbang tea house · Pig Restaurant 2 at 8pm · rooftop nightcap</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 2 · </span>Sun, 11 Oct</div><div class="tl-event">Yeonnam · Seongbuk-dong</div><div class="tl-detail">Yeonnam (Long Vacation + stationery) · Seongbuk cafés + Chaekbonyang + walk street · Suyeonsanbang tea · Pig Restaurant 2 at 8pm</div></div>
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 3 · </span>Mon, 12 Oct</div><div class="tl-event">Seongsu + Seoul Forest</div><div class="tl-detail">Halmeoni Recipe lunch · Seoul Forest + KWANGYA (SM) · Seongsu shops (Verish, salt bread) · LCDC + photobooth · Jojo Kalguksu dinner · Olive Young N</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 4 · </span>Tue, 13 Oct</div><div class="tl-event">Insadong · Ikseon</div><div class="tl-detail">Insadong crafts + Ssamziegil · Solsot sotbap lunch · Anguk hanok cafés + Ikseon-dong · Banpo sunset + ramyeon night (weekday quiet)</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 4 · </span>Tue, 13 Oct</div><div class="tl-event">Insadong · Ikseon · Cheongye Supper</div><div class="tl-detail">Insadong crafts + Ssamziegil · Solsot sotbap lunch · Anguk/Ikseon cafés · Banpo sunset + ramyeon (small bites) · Cheongye Dakhanmari late supper</div></div>
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 5 · </span>Wed, 14 Oct</div><div class="tl-event">Shuen Day 🤝 — Full Day</div><div class="tl-detail">Yanni × Shuen all day, plans flexible · Mad's solo adventure day · optional evening regroup</div></div>
         <div class="tl-item"><div class="tl-dot" style="background:linear-gradient(135deg,#6366f1,#3b82f6);box-shadow:0 0 0 2px rgba(99,102,241,.2)"></div><div class="tl-date"><span class="tl-daynum">Day 6 · </span>Thu, 15 Oct</div><div class="tl-event">Hannam-dong · CheongA Clinic</div><div class="tl-detail">Old Ferry Donut · Sounds Hannam · MM6 + NUMBERING · CheongA Clinic 14:30 (both, passports!) · Odarijip ganjang gejang dinner</div></div>
-        <div class="tl-item"><div class="tl-dot" style="background:#f97316;box-shadow:0 0 0 2px rgba(249,115,22,.2)"></div><div class="tl-date"><span class="tl-daynum">Day 7 · </span>Fri, 16 Oct</div><div class="tl-event">Belle Studio · Yeonnam · Farewell</div><div class="tl-detail">Slow morning + last Gangnam shopping · Belle Studio 13:00–15:00 (Dogok) · Yeonnam (Long Vacation, stationery) + Pokpo · Cheongye Dakhanmari farewell supper</div></div>
+        <div class="tl-item"><div class="tl-dot" style="background:#f97316;box-shadow:0 0 0 2px rgba(249,115,22,.2)"></div><div class="tl-date"><span class="tl-daynum">Day 7 · </span>Fri, 16 Oct</div><div class="tl-event">Belle Studio · Farewell</div><div class="tl-detail">Slow morning + last Gangnam shopping · Belle Studio 13:00–15:00 (Dogok) · rest &amp; recover · farewell dinner + Banpo Bridge fountain</div></div>
       </div>
 
       <div class="tl-loc" onclick="toggleTlGroup(this)"><span class="tl-loc-label">🛬 &nbsp;Return</span><span class="tl-loc-line"></span><span class="tl-loc-chevron">▼</span></div>
@@ -1350,12 +1353,12 @@ body.dark .polaroid-caption{color:#4c465e}
   <div class="flt-section-label">📅 Schedule</div>
   <div class="day-pills">
     <button class="day-pill active" onclick="switchDay('seoul',1,this)"><span class="dp-pill-date">Sat 10 Oct</span><span class="dp-pill-label">Arrival</span></button>
-    <button class="day-pill" onclick="switchDay('seoul',2,this)"><span class="dp-pill-date">Sun 11 Oct</span><span class="dp-pill-label">Seongbuk</span></button>
+    <button class="day-pill" onclick="switchDay('seoul',2,this)"><span class="dp-pill-date">Sun 11 Oct</span><span class="dp-pill-label">Yeonnam · Seongbuk</span></button>
     <button class="day-pill" onclick="switchDay('seoul',3,this)"><span class="dp-pill-date">Mon 12 Oct</span><span class="dp-pill-label">Seongsu</span></button>
     <button class="day-pill" onclick="switchDay('seoul',4,this)"><span class="dp-pill-date">Tue 13 Oct</span><span class="dp-pill-label">Insadong</span></button>
     <button class="day-pill" onclick="switchDay('seoul',5,this)"><span class="dp-pill-date">Wed 14 Oct</span><span class="dp-pill-label">Shuen Day</span></button>
     <button class="day-pill" onclick="switchDay('seoul',6,this)"><span class="dp-pill-date">Thu 15 Oct</span><span class="dp-pill-label">Hannam · Clinic</span></button>
-    <button class="day-pill" onclick="switchDay('seoul',7,this)"><span class="dp-pill-date">Fri 16 Oct</span><span class="dp-pill-label">Yeonnam · Belle</span></button>
+    <button class="day-pill" onclick="switchDay('seoul',7,this)"><span class="dp-pill-date">Fri 16 Oct</span><span class="dp-pill-label">Belle Studio</span></button>
     <button class="day-pill" onclick="switchDay('seoul',8,this)"><span class="dp-pill-date">Sat 17 Oct</span><span class="dp-pill-label">Fly Home</span></button>
   </div>
 
@@ -1444,21 +1447,22 @@ body.dark .polaroid-caption{color:#4c465e}
     <div class="card">
       <div class="dp-dayhead">
         <div class="dp-daytitle">Day 2 — Sunday, 11 October</div>
-        <div class="dp-daysub">Seongbuk-dong · Slow Sunday · Pig Restaurant 8pm</div>
+        <div class="dp-daysub">Yeonnam · Seongbuk-dong · Pig Restaurant 8pm</div>
       </div>
       <div class="dp-timeline">
         <div class="dp-item">
-          <div class="dp-dot"></div>
-          <div class="dp-time">Late morning</div>
-          <div class="dp-title">Slow Start → Seongbuk-dong</div>
-          <div class="dp-desc">Sleep off the red-eye, easy coffee, then head up to hushed, hilly <strong>Seongbuk-dong</strong> (Hansung Univ Stn, Line 4) — a calm, pretty neighbourhood, perfect for an easy day two.</div>
-          <div class="dp-tags"><span class="dp-tag">Rest</span><span class="dp-tag">Seongbuk</span></div>
+          <div class="dp-dot key"></div>
+          <div class="dp-time">~10:30</div>
+          <div class="dp-title">Yeonnam — Long Vacation + Stationery ☕✏️</div>
+          <div class="dp-desc">Start northwest in Yeonnam: coffee at <strong>Long Vacation</strong> (Donggyo-ro 38-gil), then the cute stationery shops you wanted — <strong>Sokamono</strong> &amp; friends (Point of View, Object, Star Cat) by the Gyeongui Line Forest. Cafe Pokpo's waterfall is a 10-min walk if it's flowing.</div>
+          <div class="dp-tags"><span class="dp-tag">Café</span><span class="dp-tag">Stationery</span><span class="dp-tag">Yeonnam</span></div>
+          <a class="dp-map" href="https://map.naver.com/p/search/롱베케이션 연남" target="_blank">📍 Long Vacation</a>
         </div>
         <div class="dp-item">
           <div class="dp-dot key"></div>
           <div class="dp-time">~13:00</div>
           <div class="dp-title">Seongbuk Cafés + Walk Street 📚</div>
-          <div class="dp-desc">The walk street and its cafés: <strong>Chaekbonyang</strong> — the cat bookshop in a tiny hanok (opens 13:00 Sundays; ring the doorbell to be let in) — and <strong>Good Morning General Store</strong>, with slow lanes, little galleries and embassy walls to wander between. Lunch at a Seongbuk café or spot along the way.</div>
+          <div class="dp-desc">Cross northeast to hushed, hilly <strong>Seongbuk-dong</strong> (~40 min; Hansung Univ Stn, Line 4). The walk street and its cafés: <strong>Chaekbonyang</strong> — the cat bookshop in a tiny hanok (opens 13:00 Sundays; ring the doorbell) — and <strong>Good Morning General Store</strong>, with slow lanes, galleries and embassy walls between. Lunch at a Seongbuk spot along the way.</div>
           <div class="dp-tags"><span class="dp-tag">Bookshop</span><span class="dp-tag">Walk street</span><span class="dp-tag">Cafes</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/책보냥" target="_blank">📍 Chaekbonyang</a>
         </div>
@@ -1540,10 +1544,11 @@ body.dark .polaroid-caption{color:#4c465e}
         <div class="dp-item">
           <div class="dp-dot key"></div>
           <div class="dp-time">Dinner</div>
-          <div class="dp-title">Jojo Kalguksu 🍜</div>
-          <div class="dp-desc">A big cosy bowl of surf-clam kalguksu — briny broth, thick chewy noodles, plus an octopus-seafood pancake. Right by Seongsu Station; take a ticket from the machine outside as it can get busy.</div>
-          <div class="dp-tags"><span class="dp-tag">Dinner</span><span class="dp-tag">Seongsu</span></div>
-          <a class="dp-map" href="https://map.naver.com/p/search/조조칼국수 성수" target="_blank">📍 Naver Map</a>
+          <div class="dp-title">Dinner — Jojo Kalguksu <em>or</em> Malbang Gukbap 🍜</div>
+          <div class="dp-desc">Two great Seongsu options, your pick: <strong>Jojo Kalguksu</strong> — a big cosy bowl of surf-clam kalguksu, briny broth + chewy noodles + an octopus-seafood pancake (take a ticket from the machine outside). Or <strong>Malbang Gukbap</strong> — 48-hour Hanwoo beef gukbap, plus mungtigi and yukhoe bibimbap. Both a short walk from Seongsu Station.</div>
+          <div class="dp-tags"><span class="dp-tag">Dinner</span><span class="dp-tag">Jojo / Malbang</span></div>
+          <a class="dp-map" href="https://map.naver.com/p/search/조조칼국수 성수" target="_blank">📍 Jojo</a>
+          <a class="dp-map" href="https://map.naver.com/p/search/말방국밥 성수" target="_blank">📍 Malbang</a>
         </div>
         <div class="dp-item">
           <div class="dp-dot key"></div>
@@ -1562,7 +1567,7 @@ body.dark .polaroid-caption{color:#4c465e}
     <div class="card">
       <div class="dp-dayhead">
         <div class="dp-daytitle">Day 4 — Tuesday, 13 October</div>
-        <div class="dp-daysub">Insadong · Ikseon · Han River Ramyeon Night 🌅</div>
+        <div class="dp-daysub">Insadong · Ikseon · Han River Sunset · Cheongye Supper</div>
       </div>
       <div class="dp-timeline">
         <div class="dp-item">
@@ -1585,17 +1590,33 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot"></div>
           <div class="dp-time">Afternoon</div>
           <div class="dp-title">Anguk Hanok Cafés + Ikseon-dong</div>
-          <div class="dp-desc">Drift up to Anguk for a hanok café (<strong>Onion Anguk</strong>, London Bagel Museum's Anguk branch), then the tiled-roof alleys of <strong>Ikseon-dong</strong> — boutiques and dessert shops in Seoul's oldest hanok village. <strong>Ikseon Atteut</strong> is right there if you feel like an early fusion dinner instead of river food.</div>
+          <div class="dp-desc">Drift up to Anguk for a hanok café (<strong>Onion Anguk</strong>, London Bagel Museum's Anguk branch), then the tiled-roof alleys of <strong>Ikseon-dong</strong> — boutiques and dessert shops in Seoul's oldest hanok village. Keep it light on food — sunset ramyeon and a late supper are both coming.</div>
           <div class="dp-tags"><span class="dp-tag">Cafes</span><span class="dp-tag">Hanok</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/익선동 한옥거리" target="_blank">📍 Naver Map</a>
         </div>
         <div class="dp-item">
           <div class="dp-dot key"></div>
           <div class="dp-time">~17:00</div>
-          <div class="dp-title">Banpo Han River — Sunset + Ramyeon Night 🌅🍜</div>
-          <div class="dp-desc">Head home-ward to Banpo Hangang Park for the main event — and a <strong>weekday evening means far fewer people</strong> than the weekend. Claim a west-facing spot before the ~18:00 sunset, cook coin-machine ramyeon (steps in the Tips tab), order chicken to the mat, and catch the Banpo Bridge rainbow fountain if it's running. It's a 15-min walk from WECO STAY — dinner and the view in one.</div>
-          <div class="dp-tags"><span class="dp-tag">Han River</span><span class="dp-tag">Must-do</span><span class="dp-tag">Weekday quiet</span></div>
+          <div class="dp-title">Banpo Han River — Sunset + Ramyeon 🌅🍜</div>
+          <div class="dp-desc">Head home-ward to Banpo Hangang Park for sunset (~18:00) — and a <strong>weekday evening means far fewer people</strong>. Claim a west-facing spot, cook coin-machine ramyeon (steps in the Tips tab) and grab a gimbap: a light <strong>"sunset dinner" of small bites</strong>, saving room for a proper supper later. 15-min walk from WECO STAY.</div>
+          <div class="dp-tags"><span class="dp-tag">Han River</span><span class="dp-tag">Small bites</span><span class="dp-tag">Weekday quiet</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/반포한강공원" target="_blank">📍 Banpo Hangang Park</a>
+        </div>
+        <div class="dp-item">
+          <div class="dp-dot"></div>
+          <div class="dp-time">~18:45</div>
+          <div class="dp-title">In Between — Fountain · River Walk · Gotomall</div>
+          <div class="dp-desc">Fill the gap before supper: stay for the <strong>Banpo Bridge Moonlight Rainbow Fountain</strong> (evening shows ~19:30 &amp; 20:00, if running) and a river stroll, or dip into <strong>Gotomall</strong> — the huge, cheap underground fashion arcade right at the Express Bus Terminal, 5 min from home. Freshen up at the hotel, then head toward Sindang.</div>
+          <div class="dp-tags"><span class="dp-tag">Fountain</span><span class="dp-tag">Walk</span><span class="dp-tag">Shopping</span></div>
+          <a class="dp-map" href="https://map.naver.com/p/search/고투몰" target="_blank">📍 Gotomall</a>
+        </div>
+        <div class="dp-item">
+          <div class="dp-dot key"></div>
+          <div class="dp-time">~20:30</div>
+          <div class="dp-title">Supper — Cheongye Dakhanmari 🐔</div>
+          <div class="dp-desc">Warm late supper (야식): <strong>Cheongye Dakhanmari (천계닭한마리)</strong> near Sindang (~25 min from Banpo) — whole chicken in a clean, garlicky broth, dak-hanmari style; drop the kalguksu noodles in at the end. Cosy and mild, the perfect end to a long day.</div>
+          <div class="dp-tags"><span class="dp-tag">Must Eat</span><span class="dp-tag">Supper</span></div>
+          <a class="dp-map" href="https://map.naver.com/p/search/천계닭한마리 신당본점" target="_blank">📍 Naver Map</a>
         </div>
       </div>
     </div>
@@ -1689,7 +1710,7 @@ body.dark .polaroid-caption{color:#4c465e}
     <div class="card">
       <div class="dp-dayhead">
         <div class="dp-daytitle">Day 7 — Friday, 16 October</div>
-        <div class="dp-daysub">Slow AM · Belle Studio 13:00 💄 · Yeonnam · Cheongye Supper</div>
+        <div class="dp-daysub">Slow AM · Belle Studio 13:00 💄 · Farewell</div>
       </div>
       <div class="dp-timeline">
         <div class="dp-item">
@@ -1708,20 +1729,19 @@ body.dark .polaroid-caption{color:#4c465e}
           <a class="dp-map" href="https://map.naver.com/p/search/벨르스튜디오 매봉" target="_blank">📍 Naver Map</a>
         </div>
         <div class="dp-item">
-          <div class="dp-dot key"></div>
-          <div class="dp-time">~16:00</div>
-          <div class="dp-title">Yeonnam — Long Vacation + Stationery ☕✏️</div>
-          <div class="dp-desc">The 1pm slot frees the afternoon for Yeonnam: <strong>Long Vacation</strong> café on Donggyo-ro 38-gil, then the cute stationery shops — <strong>Sokamono</strong> &amp; friends (Point of View, Object, Star Cat) by the Gyeongui Line Forest. <strong>Cafe Pokpo</strong>'s waterfall is a 10-min walk away if it's still flowing.</div>
-          <div class="dp-tags"><span class="dp-tag">Café</span><span class="dp-tag">Stationery</span><span class="dp-tag">Pokpo</span></div>
-          <a class="dp-map" href="https://map.naver.com/p/search/롱베케이션 연남" target="_blank">📍 Long Vacation</a>
+          <div class="dp-dot"></div>
+          <div class="dp-time">~15:00</div>
+          <div class="dp-title">Rest &amp; Recover · Last Bits</div>
+          <div class="dp-desc">Take it easy after the treatment — back near home to freshen up and let your lips settle. A final Olive Young or Dosan run if you've the energy; otherwise just relax before the farewell dinner.</div>
+          <div class="dp-tags"><span class="dp-tag">Relax</span></div>
         </div>
         <div class="dp-item">
           <div class="dp-dot key"></div>
-          <div class="dp-time">Supper</div>
-          <div class="dp-title">Farewell Supper — Cheongye Dakhanmari 🐔</div>
-          <div class="dp-desc">Last-night must-eat: <strong>Cheongye Dakhanmari (천계닭한마리)</strong> near Sindang — a whole chicken simmered at the table in a clean, garlicky broth. Mild and warming, so gentle on fresh lips, and a cosy end to the trip; add the kalguksu noodles into the pot at the end. (The Banpo Bridge rainbow fountain is a short ride home after, if you want one last night-view.)</div>
-          <div class="dp-tags"><span class="dp-tag">Must Eat</span><span class="dp-tag">Supper</span></div>
-          <a class="dp-map" href="https://map.naver.com/p/search/천계닭한마리 신당본점" target="_blank">📍 Naver Map</a>
+          <div class="dp-time">Evening</div>
+          <div class="dp-title">Farewell Dinner + Banpo Fountain 🌉</div>
+          <div class="dp-desc">Last-night dinner — round two at the trip favourite, or anything still unticked. Keep it gentle on fresh lips (nothing too spicy). Then close the trip at the Banpo Bridge rainbow fountain, a short stroll from the hotel.</div>
+          <div class="dp-tags"><span class="dp-tag">Dinner</span><span class="dp-tag">Night views</span></div>
+          <a class="dp-map" href="https://maps.google.com/?q=Banpo+Bridge+Moonlight+Rainbow+Fountain" target="_blank">📍 Banpo Bridge</a>
         </div>
       </div>
     </div>
@@ -1916,13 +1936,13 @@ body.dark .polaroid-caption{color:#4c465e}
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:linear-gradient(135deg,#78350f,#d97706);display:flex;align-items:center;justify-content:center;font-size:22px">🐔</div>
           <div class="place-info">
-            <div class="place-nameline"><span class="place-name">Cheongye Dakhanmari · 천계닭한마리</span><span class="place-must">Fri 16 · Supper</span></div>
+            <div class="place-nameline"><span class="place-name">Cheongye Dakhanmari · 천계닭한마리</span><span class="place-must">Tue 13 · Supper</span></div>
             <div class="place-sub">Sindang · Whole-chicken dak hanmari</div>
           </div>
           <div class="place-chev">▼</div>
         </div>
         <div class="place-body">
-          <div class="place-desc">Your <strong>farewell supper</strong> — a cleaner, roomier take on dak hanmari near Sindang Station. Whole chicken simmered at the table in a deep broth built on hwanggi (astragalus root) and eomnamu bark, with house-made dadaegi and mul-kimchi; drop the kalguksu noodles in at the end. Big tables, relaxed sit-down, and mild enough to be gentle on fresh lips after Belle Studio.</div>
+          <div class="place-desc">Your <strong>Tuesday late supper (야식)</strong> after the Han River sunset — a cleaner, roomier take on dak hanmari near Sindang Station. Whole chicken simmered at the table in a deep broth built on hwanggi (astragalus root) and eomnamu bark, with house-made dadaegi and mul-kimchi; drop the kalguksu noodles in at the end. Big tables, mild and warming.</div>
           <div class="place-meta"><div class="place-meta-row">📍 28, Toegye-ro 76-gil, Jung-gu (1F–2F) · near Sindang Stn (L2·6) · public parking 5-min walk</div></div>
           <div class="place-links"><a class="place-link" href="https://map.naver.com/p/search/천계닭한마리 신당본점" target="_blank">📍 Naver Map</a><a class="place-link" href="https://maps.google.com/?q=천계닭한마리 신당" target="_blank">🗺 Google Maps</a></div>
         </div>
@@ -1948,7 +1968,7 @@ body.dark .polaroid-caption{color:#4c465e}
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:linear-gradient(135deg,#0f766e,#14b8a6);display:flex;align-items:center;justify-content:center;font-size:22px">🌴</div>
           <div class="place-info">
-            <div class="place-nameline"><span class="place-name">Long Vacation · 롱베케이션</span><span class="place-must">Fri 16 · AM</span></div>
+            <div class="place-nameline"><span class="place-name">Long Vacation · 롱베케이션</span><span class="place-must">Sun 11 · AM</span></div>
             <div class="place-sub">Yeonnam · Café</div>
           </div>
           <div class="place-chev">▼</div>
@@ -2400,7 +2420,7 @@ body.dark .polaroid-caption{color:#4c465e}
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:linear-gradient(135deg,#0e7490,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:22px">💧</div>
           <div class="place-info">
-            <div class="place-nameline"><span class="place-name">Cafe Pokpo · 카페 폭포</span><span class="place-must">Fri 16 · PM</span></div>
+            <div class="place-nameline"><span class="place-name">Cafe Pokpo · 카페 폭포</span><span class="place-must">Sun 11 · opt</span></div>
             <div class="place-sub">Seodaemun / Yeonhui · Waterfall-view café</div>
           </div>
           <div class="place-chev">▼</div>
@@ -2602,12 +2622,12 @@ body.dark .polaroid-caption{color:#4c465e}
       <thead><tr><th>Date</th><th>Day</th><th>What's Happening</th></tr></thead>
       <tbody>
         <tr><td><strong>10 Oct</strong></td><td>Sat</td><td>Fly SIN → ICN · Tosokchon · Seochon street (OFR + GRANHAND, Nest, Tongin) · Ralph Lauren + ARKET · Acid House</td></tr>
-        <tr><td><strong>11 Oct</strong></td><td>Sun</td><td>Seongbuk-dong cafés + Chaekbonyang + walk street · Suyeonsanbang · Pig Restaurant 2 (8pm)</td></tr>
+        <tr><td><strong>11 Oct</strong></td><td>Sun</td><td>Yeonnam (Long Vacation + stationery) · Seongbuk-dong + Chaekbonyang · Suyeonsanbang · Pig Restaurant 2 (8pm)</td></tr>
         <tr><td><strong>12 Oct</strong></td><td>Mon</td><td>Halmeoni Recipe · Seoul Forest + KWANGYA · Seongsu shops · LCDC + photobooth · Jojo Kalguksu · Olive Young N</td></tr>
-        <tr><td><strong>13 Oct</strong></td><td>Tue</td><td>Insadong · Ssamziegil · Solsot sotbap lunch · Anguk/Ikseon cafés · Banpo sunset + ramyeon night</td></tr>
+        <tr><td><strong>13 Oct</strong></td><td>Tue</td><td>Insadong · Ssamziegil · Solsot lunch · Anguk/Ikseon · Banpo sunset + ramyeon · Cheongye Dakhanmari supper</td></tr>
         <tr><td><strong>14 Oct</strong></td><td>Wed</td><td>Shuen Day — Yanni × Shuen full day (flexible) · Mad's solo adventure</td></tr>
         <tr><td><strong>15 Oct</strong></td><td>Thu</td><td>Hannam (Sounds, MM6, NUMBERING, Old Ferry) · CheongA Clinic 14:30 · Odarijip dinner</td></tr>
-        <tr><td><strong>16 Oct</strong></td><td>Fri</td><td>Slow AM + last shopping · Belle Studio 13:00–15:00 (Dogok) · Yeonnam + Pokpo · Cheongye Dakhanmari supper</td></tr>
+        <tr><td><strong>16 Oct</strong></td><td>Fri</td><td>Slow AM + last shopping · Belle Studio 13:00–15:00 (Dogok) · rest · farewell dinner · Banpo fountain</td></tr>
         <tr><td><strong>17 Oct</strong></td><td>Sat</td><td>Fly ICN → SIN · SQ 601 16:45→22:00 · at airport by 13:45</td></tr>
       </tbody>
     </table>
@@ -3052,7 +3072,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 var _calEvents = {
   10:{ev:'Arrival',      tab:'seoul', day:1},
-  11:{ev:'Seongbuk',     tab:'seoul', day:2},
+  11:{ev:'Yeonnam·Seongbuk', tab:'seoul', day:2},
   12:{ev:'Seongsu',      tab:'seoul', day:3},
   13:{ev:'Insadong',     tab:'seoul', day:4},
   14:{ev:'Shuen Day',    tab:'seoul', day:5},
