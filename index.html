@@ -848,6 +848,12 @@ body.dark .dp-steps>li{color:rgba(255,255,255,.75)}
 body.dark .dp-steps strong{color:#fff}
 .dp-steplead{font-size:13.5px;color:var(--text2);line-height:1.55}
 body.dark .dp-steplead{color:rgba(255,255,255,.72)}
+.dp-bullets{list-style:none;margin:6px 0 2px;padding:0;display:flex;flex-direction:column;gap:6px}
+.dp-bullets>li{position:relative;padding-left:17px;font-size:13.5px;line-height:1.5;color:var(--text2)}
+.dp-bullets>li::before{content:'';position:absolute;left:3px;top:8px;width:5px;height:5px;border-radius:50%;background:var(--indigo)}
+.dp-bullets strong{color:var(--text);font-weight:700}
+body.dark .dp-bullets>li{color:rgba(255,255,255,.75)}
+body.dark .dp-bullets strong{color:#fff}
 .dp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
 .dp-or-split{display:flex;align-items:center;gap:10px;margin:18px 0 14px}
 .dp-or-split-line{flex:1;height:1px;background:rgba(99,102,241,.18)}
@@ -1384,7 +1390,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">02:25 SIN</div>
           <div class="dp-title">Depart Singapore — SQ 612</div>
-          <div class="dp-desc">SIN → ICN · Economy · A350-900 · 6h 25m non-stop from Changi T2. Red-eye — sleep as much as possible.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>SIN → ICN · Economy · A350-900 · 6h 25m non-stop from Changi T2.</li><li>Red-eye — sleep as much as possible.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Flight</span><span class="dp-tag">SQ 612</span></div>
         </div>
         <div class="dp-item">
@@ -1417,7 +1423,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">Lunch</div>
           <div class="dp-title">Tosokchon Samgyetang 🍗</div>
-          <div class="dp-desc">The famous ginseng chicken soup institution in a hanok courtyard right by Gyeongbokgung. There's usually a queue but it moves fast. Warm, restorative — the perfect first meal after a red-eye.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>The famous ginseng chicken soup institution in a hanok courtyard right by Gyeongbokgung.</li><li>There's usually a queue but it moves fast.</li><li>Warm, restorative — the perfect first meal after a red-eye.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Must Eat</span><span class="dp-tag">Lunch</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/토속촌삼계탕" target="_blank">📍 Naver Map</a>
         </div>
@@ -1425,7 +1431,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">Afternoon</div>
           <div class="dp-title">Seochon Street — Today's Focus 📚🕯️</div>
-          <div class="dp-desc">Spend the afternoon in Seochon, the low-rise hanok quarter around Tosokchon (no palace or Bukchon this trip — Seochon's the vibe). Browse <strong>OFR Seoul &amp; Mirabelle</strong> (Parisian art-book shop + café) and <strong>GRANHAND Seochon</strong> for fragrances, then wander the Jahamun-ro 7-gil café street and its little galleries.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Spend the afternoon in Seochon, the low-rise hanok quarter around Tosokchon (no palace or Bukchon this trip — Seochon's the vibe).</li><li>Browse <strong>OFR Seoul &amp; Mirabelle</strong> (Parisian art-book shop + café) and <strong>GRANHAND Seochon</strong> for fragrances, then wander the Jahamun-ro 7-gil café street and its little galleries.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Seochon</span><span class="dp-tag">Books</span><span class="dp-tag">Fragrance</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/오에프알 서울" target="_blank">📍 OFR Seoul</a>
         </div>
@@ -1440,7 +1446,12 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">~17:00</div>
           <div class="dp-title">Garosu-gil — Ralph Lauren + ARKET 🛍️</div>
-          <div class="dp-desc">Hop to Sinsa (~15 min) and wander the streets around Acid House before dinner: the <strong>Ralph Lauren flagship</strong> (with Ralph's Coffee inside), the <strong>ARKET</strong> Asia flagship, and the Garosu-gil / Serosu-gil side alleys full of Korean designers and concept stores.</div>
+          <div class="dp-desc"><div class="dp-steplead">Hop to Sinsa (~15 min) and wander the streets around Acid House before dinner:</div>
+            <ul class="dp-bullets">
+              <li>the <strong>Ralph Lauren flagship</strong> (with Ralph's Coffee inside)</li>
+              <li>the <strong>ARKET</strong> Asia flagship</li>
+              <li>the Garosu-gil / Serosu-gil side alleys, full of Korean designers &amp; concept stores</li>
+            </ul></div>
           <div class="dp-tags"><span class="dp-tag">Shopping</span><span class="dp-tag">Garosu-gil</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/아르켓 가로수길" target="_blank">📍 ARKET</a>
         </div>
@@ -1448,7 +1459,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">Dinner</div>
           <div class="dp-title">Acid House 🍽</div>
-          <div class="dp-desc">Kick off the trip at Acid House — a minimal, design-forward spot in Sinsa doing modern Nordic plates and natural wine, an easy ~15 min from your hotel. Dinner runs Tue–Sat 17:00–22:00, so a Saturday arrival night is the one evening it slots perfectly (Sundays are brunch-only). Keep it relaxed — you're still on a red-eye — then an early night.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Kick off the trip at Acid House — a minimal, design-forward spot in Sinsa doing modern Nordic plates and natural wine, an easy ~15 min from your hotel.</li><li>Dinner runs Tue–Sat 17:00–22:00, so a Saturday arrival night is the one evening it slots perfectly (Sundays are brunch-only).</li><li>Keep it relaxed — you're still on a red-eye — then an early night.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Must Eat</span><span class="dp-tag">Dinner</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/애시드하우스 신사" target="_blank">📍 Naver Map</a>
         </div>
@@ -1468,7 +1479,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">12:00</div>
           <div class="dp-title">Brunch in Yeonnam — Long Vacation 🥐</div>
-          <div class="dp-desc">Easy noon start — brunch / café food in Yeonnam: <strong>Long Vacation</strong> (Donggyo-ro 38-gil), or Café Layered's scones nearby. Then browse the cute stationery shops you wanted — <strong>Sokamono</strong> &amp; friends (Point of View, Object, Star Cat) by the Gyeongui Line Forest.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Easy noon start — brunch / café food in Yeonnam: <strong>Long Vacation</strong> (Donggyo-ro 38-gil), or Café Layered's scones nearby.</li><li>Then browse the cute stationery shops you wanted — <strong>Sokamono</strong> &amp; friends (Point of View, Object, Star Cat) by the Gyeongui Line Forest.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Brunch</span><span class="dp-tag">Café</span><span class="dp-tag">Stationery</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/롱베케이션 연남" target="_blank">📍 Long Vacation</a>
         </div>
@@ -1476,7 +1487,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">~14:30</div>
           <div class="dp-title">Seongbuk Cafés + Walk Street 📚</div>
-          <div class="dp-desc">Cross northeast to hushed, hilly <strong>Seongbuk-dong</strong> (~40 min; Hansung Univ Stn, Line 4). The walk street and its cafés: <strong>Chaekbonyang</strong> — the cat bookshop in a tiny hanok (opens 13:00 Sundays; ring the doorbell) — and <strong>Good Morning General Store</strong>, with slow lanes, galleries and embassy walls between. Then head home-ward to freshen up before dinner.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Cross northeast to hushed, hilly <strong>Seongbuk-dong</strong> (~40 min; Hansung Univ Stn, Line 4).</li><li>The walk street and its cafés: <strong>Chaekbonyang</strong> — the cat bookshop in a tiny hanok (opens 13:00 Sundays; ring the doorbell) — and <strong>Good Morning General Store</strong>, with slow lanes, galleries and embassy walls between.</li><li>Then head home-ward to freshen up before dinner.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Bookshop</span><span class="dp-tag">Walk street</span><span class="dp-tag">Cafes</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/책보냥" target="_blank">📍 Chaekbonyang</a>
         </div>
@@ -1484,7 +1495,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">20:00</div>
           <div class="dp-title">Dinner — Pig Restaurant 2 🥓</div>
-          <div class="dp-desc">Premium pork BBQ in Itaewon where the owner grills every cut at your table. Booked for <strong>8pm</strong> — a relaxed late dinner. Still small and popular, so be on time. (Haebangchon &amp; Haus Bakery are a short walk uphill if you want a pre-dinner wander — optional, not a must.)</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Premium pork BBQ in Itaewon where the owner grills every cut at your table.</li><li>Booked for <strong>8pm</strong> — a relaxed late dinner.</li><li>Still small and popular, so be on time.</li><li>(Haebangchon &amp; Haus Bakery are a short walk uphill if you want a pre-dinner wander — optional, not a must.)</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Must Eat</span><span class="dp-tag">KBBQ</span><span class="dp-tag">8pm</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/돼지식당 둘째 이태원" target="_blank">📍 Naver Map</a>
         </div>
@@ -1511,7 +1522,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">11:15</div>
           <div class="dp-title">Lunch — Halmeoni Recipe 🍚</div>
-          <div class="dp-desc">"Grandmother's Recipe" — Michelin-listed home-style Korean set meals near Seoul Forest. The ssambap and bibimbap sets are the bestsellers. Closed Tuesdays, which is exactly why it's slotted today. Arrive ~11:15 before the lunch rush.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>"Grandmother's Recipe" — Michelin-listed home-style Korean set meals near Seoul Forest.</li><li>The ssambap and bibimbap sets are the bestsellers.</li><li>Closed Tuesdays, which is exactly why it's slotted today.</li><li>Arrive ~11:15 before the lunch rush.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Must Eat</span><span class="dp-tag">Michelin</span><span class="dp-tag">Closed Tue</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/할머니의레시피 서울숲" target="_blank">📍 Naver Map</a>
         </div>
@@ -1519,7 +1530,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">Afternoon</div>
           <div class="dp-title">Seoul Forest — Early Ginkgo</div>
-          <div class="dp-desc">Stroll Seoul Forest's ginkgo-lined paths — mid-October is when the gold starts. Deer enclosure, glasshouse, very picnic-able.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Stroll Seoul Forest's ginkgo-lined paths — mid-October is when the gold starts.</li><li>Deer enclosure, glasshouse, very picnic-able.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Park</span><span class="dp-tag">🍂</span></div>
           <a class="dp-map" href="https://maps.google.com/?q=Seoul+Forest" target="_blank">📍 Seoul Forest</a>
         </div>
@@ -1527,7 +1538,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot"></div>
           <div class="dp-time">~15:00</div>
           <div class="dp-title">KWANGYA@SEOUL (SM Town) 🎤</div>
-          <div class="dp-desc">SM Entertainment's official store + exhibits in the D Tower / Acro Seoul Forest, right by the park — merch for your faves and a photogenic, futuristic space. Open till 20:00 (Ttukseom Stn, Line 2, Exit 5).</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>SM Entertainment's official store + exhibits in the D Tower / Acro Seoul Forest, right by the park — merch for your faves and a photogenic, futuristic space.</li><li>Open till 20:00 (Ttukseom Stn, Line 2, Exit 5).</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">K-pop</span><span class="dp-tag">SM</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/광야 서울" target="_blank">📍 Naver Map</a>
         </div>
@@ -1535,7 +1546,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot"></div>
           <div class="dp-time">Late PM</div>
           <div class="dp-title">Seongsu-dong — Shop &amp; Café Crawl</div>
-          <div class="dp-desc">Korea's "Brooklyn": Cafe Onion in a converted factory, Tamburins, pop-ups and vintage shops. Your shopping list — <strong>Verish</strong> (blue flagship on Yeonmujang-gil), <strong>CUEREN</strong> leather shoes at their Seongsu "Village" (dessert café + gallery inside), and <strong>Monoha</strong> Seongsu (lifestyle shop + gallery + café) — plus <strong>Jayeondo Salt Bread</strong> for a warm snack.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Korea's "Brooklyn": Cafe Onion in a converted factory, Tamburins, pop-ups and vintage shops.</li><li>Your shopping list — <strong>Verish</strong> (blue flagship on Yeonmujang-gil), <strong>CUEREN</strong> leather shoes at their Seongsu "Village" (dessert café + gallery inside), and <strong>Monoha</strong> Seongsu (lifestyle shop + gallery + café) — plus <strong>Jayeondo Salt Bread</strong> for a warm snack.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Shopping</span><span class="dp-tag">Verish</span><span class="dp-tag">Cafes</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/베리시 성수" target="_blank">📍 Verish Seongsu</a>
         </div>
@@ -1543,7 +1554,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot"></div>
           <div class="dp-time">~17:00</div>
           <div class="dp-title">Photobooth · LCDC Seoul · Daelim Changgo 📸</div>
-          <div class="dp-desc">The fun Seongsu extras before dinner: <strong>Eternalog</strong> — the analog photobooth using restored 1960s European film machines (no screen, no retouching — plan your poses!), or Photoism/Haru Film for cute strips; <strong>LCDC Seoul</strong> — a courtyard complex of tiny Korean designer shops; and <strong>Daelim Changgo</strong>, the warehouse-turned-gallery-café that started the whole Seongsu thing. Plus whatever brand pop-up has taken over the street that week.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>The fun Seongsu extras before dinner: <strong>Eternalog</strong> — the analog photobooth using restored 1960s European film machines (no screen, no retouching — plan your poses!), or Photoism/Haru Film for cute strips; <strong>LCDC Seoul</strong> — a courtyard complex of tiny Korean designer shops; and <strong>Daelim Changgo</strong>, the warehouse-turned-gallery-café that started the whole Seongsu thing.</li><li>Plus whatever brand pop-up has taken over the street that week.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Fun</span><span class="dp-tag">Photobooth</span><span class="dp-tag">Pop-ups</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/LCDC 서울" target="_blank">📍 LCDC Seoul</a>
         </div>
@@ -1551,7 +1562,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">Dinner</div>
           <div class="dp-title">Dinner — Jojo Kalguksu <em>or</em> Malbang Gukbap 🍜</div>
-          <div class="dp-desc">Two great Seongsu options, your pick: <strong>Jojo Kalguksu</strong> — a big cosy bowl of surf-clam kalguksu, briny broth + chewy noodles + an octopus-seafood pancake (take a ticket from the machine outside). Or <strong>Malbang Gukbap</strong> — 48-hour Hanwoo beef gukbap, plus mungtigi and yukhoe bibimbap. Both a short walk from Seongsu Station.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Two great Seongsu options, your pick: <strong>Jojo Kalguksu</strong> — a big cosy bowl of surf-clam kalguksu, briny broth + chewy noodles + an octopus-seafood pancake (take a ticket from the machine outside).</li><li>Or <strong>Malbang Gukbap</strong> — 48-hour Hanwoo beef gukbap, plus mungtigi and yukhoe bibimbap.</li><li>Both a short walk from Seongsu Station.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Dinner</span><span class="dp-tag">Jojo / Malbang</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/조조칼국수 성수" target="_blank">📍 Jojo</a>
           <a class="dp-map" href="https://map.naver.com/p/search/말방국밥 성수" target="_blank">📍 Malbang</a>
@@ -1560,7 +1571,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">After dinner</div>
           <div class="dp-title">Olive Young N Seongsu 💄</div>
-          <div class="dp-desc">Cap the night at Korea's biggest Olive Young — a 5-floor K-beauty playground in the Factorial Seongsu building (Seongsu Stn Exit 4), open late. Trend fountain, exclusive goods, K-pop zone. Bring your passport for the tax refund.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Cap the night at Korea's biggest Olive Young — a 5-floor K-beauty playground in the Factorial Seongsu building (Seongsu Stn Exit 4), open late.</li><li>Trend fountain, exclusive goods, K-pop zone.</li><li>Bring your passport for the tax refund.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Shopping</span><span class="dp-tag">Skincare</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/올리브영N 성수" target="_blank">📍 Naver Map</a>
         </div>
@@ -1580,7 +1591,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">~10:30</div>
           <div class="dp-title">Insadong — Craft Street Wander 🎋</div>
-          <div class="dp-desc">Seoul's traditional-culture street: <strong>Ssamziegil</strong>'s spiral ramp of tiny craft shops, hanji (paper), calligraphy brushes, ceramics and stamps along Insadong-gil, with galleries and old tea houses off the alleys. Great souvenir hunting.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Seoul's traditional-culture street: <strong>Ssamziegil</strong>'s spiral ramp of tiny craft shops, hanji (paper), calligraphy brushes, ceramics and stamps along Insadong-gil, with galleries and old tea houses off the alleys.</li><li>Great souvenir hunting.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Crafts</span><span class="dp-tag">Souvenirs</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/인사동" target="_blank">📍 Naver Map</a>
         </div>
@@ -1588,7 +1599,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">~12:00</div>
           <div class="dp-title">Lunch — Solsot Sotbap 🍚</div>
-          <div class="dp-desc"><strong>Solsot (솔솥)</strong> — premium pot-rice done right: steak sotbap (~₩17,000), mix in the sauce, scoop the rice out, then pour hot broth over the crispy nurungji at the bottom for a second course. The Insadong branch queues at peak — no reservations, so land near noon sharp.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li><strong>Solsot (솔솥)</strong> — premium pot-rice done right: steak sotbap (~₩17,000), mix in the sauce, scoop the rice out, then pour hot broth over the crispy nurungji at the bottom for a second course.</li><li>The Insadong branch queues at peak — no reservations, so land near noon sharp.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Must Eat</span><span class="dp-tag">Sotbap</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/솔솥 인사동" target="_blank">📍 Naver Map</a>
         </div>
@@ -1596,7 +1607,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot"></div>
           <div class="dp-time">Afternoon</div>
           <div class="dp-title">Anguk — Hanok Cafés &amp; Streets ☕</div>
-          <div class="dp-desc">Wander over to Anguk for a hanok café — <strong>Onion Anguk</strong> (café in a traditional hanok) or the <strong>London Bagel Museum</strong> Anguk branch — and the pretty boutique-and-gallery backstreets around Bukchon's edge. Keep it light on food — sunset ramyeon and a late supper are both coming.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Wander over to Anguk for a hanok café — <strong>Onion Anguk</strong> (café in a traditional hanok) or the <strong>London Bagel Museum</strong> Anguk branch — and the pretty boutique-and-gallery backstreets around Bukchon's edge.</li><li>Keep it light on food — sunset ramyeon and a late supper are both coming.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Cafes</span><span class="dp-tag">Hanok</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/어니언 안국" target="_blank">📍 Onion Anguk</a>
         </div>
@@ -1604,7 +1615,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">~17:00</div>
           <div class="dp-title">Banpo Han River — Sunset + Ramyeon 🌅🍜</div>
-          <div class="dp-desc">Head home-ward to Banpo Hangang Park for sunset (~18:00) — and a <strong>weekday evening means far fewer people</strong>. Claim a west-facing spot, cook coin-machine ramyeon (steps in the Tips tab) and grab a gimbap: a light <strong>"sunset dinner" of small bites</strong>, saving room for a proper supper later. 15-min walk from WECO STAY.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Head home-ward to Banpo Hangang Park for sunset (~18:00) — and a <strong>weekday evening means far fewer people</strong>.</li><li>Claim a west-facing spot, cook coin-machine ramyeon (steps in the Tips tab) and grab a gimbap: a light <strong>"sunset dinner" of small bites</strong>, saving room for a proper supper later.</li><li>15-min walk from WECO STAY.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Han River</span><span class="dp-tag">Small bites</span><span class="dp-tag">Weekday quiet</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/반포한강공원" target="_blank">📍 Banpo Hangang Park</a>
         </div>
@@ -1612,7 +1623,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot"></div>
           <div class="dp-time">~18:45</div>
           <div class="dp-title">In Between — Fountain · River Walk · Gotomall</div>
-          <div class="dp-desc">Fill the gap before supper: stay for the <strong>Banpo Bridge Moonlight Rainbow Fountain</strong> (evening shows ~19:30 &amp; 20:00, if running) and a river stroll, or dip into <strong>Gotomall</strong> — the huge, cheap underground fashion arcade right at the Express Bus Terminal, 5 min from home. Freshen up at the hotel, then head toward Sindang.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Fill the gap before supper: stay for the <strong>Banpo Bridge Moonlight Rainbow Fountain</strong> (evening shows ~19:30 &amp; 20:00, if running) and a river stroll, or dip into <strong>Gotomall</strong> — the huge, cheap underground fashion arcade right at the Express Bus Terminal, 5 min from home.</li><li>Freshen up at the hotel, then head toward Sindang.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Fountain</span><span class="dp-tag">Walk</span><span class="dp-tag">Shopping</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/고투몰" target="_blank">📍 Gotomall</a>
         </div>
@@ -1620,7 +1631,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">~20:30</div>
           <div class="dp-title">Supper — Cheongye Dakhanmari 🐔</div>
-          <div class="dp-desc">Warm late supper (야식): <strong>Cheongye Dakhanmari (천계닭한마리)</strong> near Sindang (~25 min from Banpo) — whole chicken in a clean, garlicky broth, dak-hanmari style; drop the kalguksu noodles in at the end. Cosy and mild, the perfect end to a long day.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Warm late supper (야식): <strong>Cheongye Dakhanmari (천계닭한마리)</strong> near Sindang (~25 min from Banpo) — whole chicken in a clean, garlicky broth, dak-hanmari style; drop the kalguksu noodles in at the end.</li><li>Cosy and mild, the perfect end to a long day.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Must Eat</span><span class="dp-tag">Supper</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/천계닭한마리 신당본점" target="_blank">📍 Naver Map</a>
         </div>
@@ -1640,21 +1651,21 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">All day</div>
           <div class="dp-title">Yanni × Shuen — Full Day Together 🤝</div>
-          <div class="dp-desc">The whole day belongs to Shuen — no fixed itinerary, plan it together when you're there. Cafés, shopping, their favourite local spots, long catch-up meals. (Shuen's free Mon–Wed; Wednesday is the default — swap days if they prefer Mon or Tue.)</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>The whole day belongs to Shuen — no fixed itinerary, plan it together when you're there.</li><li>Cafés, shopping, their favourite local spots, long catch-up meals.</li><li>(Shuen's free Mon–Wed; Wednesday is the default — swap days if they prefer Mon or Tue.)</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Shuen</span><span class="dp-tag">Flexible</span></div>
         </div>
         <div class="dp-item">
           <div class="dp-dot"></div>
           <div class="dp-time">All day</div>
           <div class="dp-title">Maddy — Solo Adventure Day ✨</div>
-          <div class="dp-desc">Maddy runs her own schedule today. Idea bank: revisit the Seongsu pop-ups or Olive Young N, KWANGYA round two, a Myeongdong wander, a photobooth crawl in Hongdae, or a lazy café day near home in Sinsa — her call entirely.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Maddy runs her own schedule today.</li><li>Idea bank: revisit the Seongsu pop-ups or Olive Young N, KWANGYA round two, a Myeongdong wander, a photobooth crawl in Hongdae, or a lazy café day near home in Sinsa — her call entirely.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Maddy</span><span class="dp-tag">Solo</span></div>
         </div>
         <div class="dp-item">
           <div class="dp-dot"></div>
           <div class="dp-time">Evening</div>
           <div class="dp-title">Regroup (Optional)</div>
-          <div class="dp-desc">Meet back near home for late dessert or a nightcap if energy allows — or both roll in whenever. Zero-pressure evening.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Meet back near home for late dessert or a nightcap if energy allows — or both roll in whenever.</li><li>Zero-pressure evening.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Optional</span></div>
         </div>
       </div>
@@ -1673,21 +1684,21 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot"></div>
           <div class="dp-time">Morning</div>
           <div class="dp-title">Slow Morning Near Home</div>
-          <div class="dp-desc">Easy start on the Gangnam side — coffee near the hotel, no rush. There's a busy afternoon-into-evening ahead (clinic + a full Hannam shopping run), so bank the rest now.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Easy start on the Gangnam side — coffee near the hotel, no rush.</li><li>There's a busy afternoon-into-evening ahead (clinic + a full Hannam shopping run), so bank the rest now.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Rest</span></div>
         </div>
         <div class="dp-item">
           <div class="dp-dot key"></div>
           <div class="dp-time">~12:30</div>
           <div class="dp-title">Lunch Near the Clinic 🍽️</div>
-          <div class="dp-desc">Grab lunch around Apgujeong / Cheongdam / Dosan Park so you're minutes from the clinic — loads of cafés and restaurants there. Keep it light and non-staining, then head to CheongA by 14:20.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Grab lunch around Apgujeong / Cheongdam / Dosan Park so you're minutes from the clinic — loads of cafés and restaurants there.</li><li>Keep it light and non-staining, then head to CheongA by 14:20.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Lunch</span></div>
         </div>
         <div class="dp-item">
           <div class="dp-dot" style="background:#ec4899;box-shadow:0 0 0 2.5px rgba(236,72,153,.22)"></div>
           <div class="dp-time">14:30</div>
           <div class="dp-title">Cheongdam CheongA Clinic — Skin Treatments ✨</div>
-          <div class="dp-desc"><strong>Booked ✓ — both of you</strong> (Tan Yan Ting / Madeleine Tan). Arrive 14:20 with <strong>passports</strong>. 4F Yejeon Building, Dosan-daero 450, Gangnam-gu. Consultation ₩50,000 — waived if you proceed with treatment; prices exclude 10% VAT (e.g. jaw botox ₩120k–200k, skin botox ₩250k–370k by brand). They'll message directions before the visit.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li><strong>Booked ✓ — both of you</strong> (Tan Yan Ting / Madeleine Tan).</li><li>Arrive 14:20 with <strong>passports</strong>.</li><li>4F Yejeon Building, Dosan-daero 450, Gangnam-gu.</li><li>Consultation ₩50,000 — waived if you proceed with treatment; prices exclude 10% VAT (e.g. jaw botox ₩120k–200k, skin botox ₩250k–370k by brand).</li><li>They'll message directions before the visit.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Fixed</span><span class="dp-tag">Passports!</span><span class="dp-tag">Skin</span></div>
           <a class="dp-map" href="https://map.naver.com/p/entry/place/1964413252" target="_blank">📍 Naver Map</a>
         </div>
@@ -1695,7 +1706,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">~16:30</div>
           <div class="dp-title">Hannam-dong — Full Shopping Afternoon 🛍️</div>
-          <div class="dp-desc">Post-clinic, cross to Hannam (~15 min) for the main event — Seoul's chicest low-key neighbourhood. The <strong>Maison Margiela / MM6</strong> flagship (renovated '70s house + café), the <strong>NUMBERING</strong> jewelry flagship, <strong>Monoha</strong> Hannam, <strong>Sounds Hannam</strong> (courtyard of shops &amp; cafés), <strong>Millimeter Milligram</strong> stationery, <strong>Beaker</strong>, and an <strong>Old Ferry Donut</strong> pit-stop. Most shops close ~20:00, so you've a solid few hours. (Leeum Museum nearby for art — reserve online.)</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Post-clinic, cross to Hannam (~15 min) for the main event — Seoul's chicest low-key neighbourhood.</li><li>The <strong>Maison Margiela / MM6</strong> flagship (renovated '70s house + café), the <strong>NUMBERING</strong> jewelry flagship, <strong>Monoha</strong> Hannam, <strong>Sounds Hannam</strong> (courtyard of shops &amp; cafés), <strong>Millimeter Milligram</strong> stationery, <strong>Beaker</strong>, and an <strong>Old Ferry Donut</strong> pit-stop.</li><li>Most shops close ~20:00, so you've a solid few hours.</li><li>(Leeum Museum nearby for art — reserve online.)</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Shopping</span><span class="dp-tag">Hannam</span><span class="dp-tag">MM6</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/사운즈한남" target="_blank">📍 Sounds Hannam</a>
         </div>
@@ -1703,7 +1714,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">Dinner</div>
           <div class="dp-title">Odarijip — Ganjang Gejang 🦀</div>
-          <div class="dp-desc">The soy-marinated raw crab feast in Yeoksam (~20 min south of Hannam) — sweet, briny crab scooped over rice (the "rice thief"), plus yangnyeom gejang and yukhoe; sets come with steamed egg and kimchi-jjigae. <strong>Book ahead on Catchtable.</strong> (Or skip the backtrack — Hannam has plenty of great dinner spots too.)</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>The soy-marinated raw crab feast in Yeoksam (~20 min south of Hannam) — sweet, briny crab scooped over rice (the "rice thief"), plus yangnyeom gejang and yukhoe; sets come with steamed egg and kimchi-jjigae.</li><li><strong>Book ahead on Catchtable.</strong> (Or skip the backtrack — Hannam has plenty of great dinner spots too.)</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Must Eat</span><span class="dp-tag">Book ahead</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/오다리집 강남역삼점" target="_blank">📍 Naver Map</a>
         </div>
@@ -1723,14 +1734,14 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">Brunch</div>
           <div class="dp-title">Brunch Near Home 🥐</div>
-          <div class="dp-desc">A proper brunch before the 1pm appointment — somewhere easy on the Gangnam side (Garosu-gil / Dosan cafés are ~10 min from Belle Studio). Keep it non-spicy and non-staining, and prep your lips: exfoliate + moisturise beforehand.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>A proper brunch before the 1pm appointment — somewhere easy on the Gangnam side (Garosu-gil / Dosan cafés are ~10 min from Belle Studio).</li><li>Keep it non-spicy and non-staining, and prep your lips: exfoliate + moisturise beforehand.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Brunch</span><span class="dp-tag">Easy</span></div>
         </div>
         <div class="dp-item">
           <div class="dp-dot" style="background:#f97316;box-shadow:0 0 0 2.5px rgba(249,115,22,.22)"></div>
           <div class="dp-time">13:00</div>
           <div class="dp-title">Yanni → Belle Studio — Lip Treatment 💄</div>
-          <div class="dp-desc"><strong>1:00pm · 4F, 420-8 Dogok-dong, Gangnam-gu · Maebong Stn (Line 3) Exit 4, 2-min walk</strong> — entrance next to 작품파스타 &amp; the 트르크프 coffee bar. ⚠️ <strong>Be there by 12:50 — 10+ min late = appointment cancelled, no refund.</strong> No parking, so take the subway or Kakao T. Allow ~2 hrs (done ~15:00). Maddy roams free nearby.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li><strong>1:00pm · 4F, 420-8 Dogok-dong, Gangnam-gu · Maebong Stn (Line 3) Exit 4, 2-min walk</strong> — entrance next to 작품파스타 &amp; the 트르크프 coffee bar.</li><li>⚠️ <strong>Be there by 12:50 — 10+ min late = appointment cancelled, no refund.</strong> No parking, so take the subway or Kakao T.</li><li>Allow ~2 hrs (done ~15:00).</li><li>Maddy roams free nearby.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Fixed 13:00</span><span class="dp-tag">Be early!</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/벨르스튜디오 매봉" target="_blank">📍 Naver Map</a>
         </div>
@@ -1738,7 +1749,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">~16:00</div>
           <div class="dp-title">Cafe Pokpo — Coffee by the Waterfall 💧</div>
-          <div class="dp-desc">After the treatment, head northwest to <strong>Cafe Pokpo</strong> in Yeonhui — outdoor tables beside the 25 m Hongjecheon waterfall (~45 min from Dogok). <strong>Check it's flowing first</strong> (seasonal — can wind down mid-October); if it's off, a Yeonnam café nearby is a lovely swap. Then back toward home for the farewell dinner.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>After the treatment, head northwest to <strong>Cafe Pokpo</strong> in Yeonhui — outdoor tables beside the 25 m Hongjecheon waterfall (~45 min from Dogok).</li><li><strong>Check it's flowing first</strong> (seasonal — can wind down mid-October); if it's off, a Yeonnam café nearby is a lovely swap.</li><li>Then back toward home for the farewell dinner.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Waterfall</span><span class="dp-tag">Café</span></div>
           <a class="dp-map" href="https://map.naver.com/p/search/카페 폭포 연희" target="_blank">📍 Naver Map</a>
         </div>
@@ -1746,7 +1757,7 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">Evening</div>
           <div class="dp-title">Farewell Dinner + Banpo Fountain 🌉</div>
-          <div class="dp-desc">Last-night dinner — round two at the trip favourite, or anything still unticked. Keep it gentle on fresh lips (nothing too spicy). Then close the trip at the Banpo Bridge rainbow fountain, a short stroll from the hotel.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Last-night dinner — round two at the trip favourite, or anything still unticked.</li><li>Keep it gentle on fresh lips (nothing too spicy).</li><li>Then close the trip at the Banpo Bridge rainbow fountain, a short stroll from the hotel.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Dinner</span><span class="dp-tag">Night views</span></div>
           <a class="dp-map" href="https://maps.google.com/?q=Banpo+Bridge+Moonlight+Rainbow+Fountain" target="_blank">📍 Banpo Bridge</a>
         </div>
@@ -1786,14 +1797,14 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot"></div>
           <div class="dp-time">At ICN</div>
           <div class="dp-title">Check In · Tax Refund · Duty Free</div>
-          <div class="dp-desc">Check in, then hit the tax-refund kiosks with passport + receipts (over ₩15,000 per Tax Free receipt qualifies). Duty free with whatever won is left.</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>Check in, then hit the tax-refund kiosks with passport + receipts (over ₩15,000 per Tax Free receipt qualifies).</li><li>Duty free with whatever won is left.</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Tax refund</span></div>
         </div>
         <div class="dp-item">
           <div class="dp-dot key"></div>
           <div class="dp-time">16:45 ICN</div>
           <div class="dp-title">Depart Seoul — SQ 601</div>
-          <div class="dp-desc">ICN → SIN · Boeing 787-10 · 6h 15m · Lands Changi 22:00. 안녕, Seoul — see you next autumn. 🇰🇷</div>
+          <div class="dp-desc"><ul class="dp-bullets"><li>ICN → SIN · Boeing 787-10 · 6h 15m · Lands Changi 22:00.</li><li>안녕, Seoul — see you next autumn.</li><li>🇰🇷</li></ul></div>
           <div class="dp-tags"><span class="dp-tag">Flight</span><span class="dp-tag">SQ 601</span></div>
         </div>
       </div>
