@@ -840,6 +840,14 @@ body.dark .cal-toggle-btn.active{background:linear-gradient(135deg,#6366f1,#8b5c
 .dp-time{display:inline-flex;align-items:center;padding:3px 10px;border-radius:100px;background:var(--indigo-l);color:var(--indigo);font-size:11px;font-weight:700;letter-spacing:.3px;margin-bottom:6px}
 .dp-title{font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
 .dp-desc{font-size:13px;color:var(--text2);margin-top:3px;line-height:1.55}
+.dp-steps{counter-reset:st;list-style:none;margin:9px 0 2px;padding:0;display:flex;flex-direction:column;gap:8px}
+.dp-steps>li{position:relative;padding-left:29px;font-size:13.5px;line-height:1.55;color:var(--text2)}
+.dp-steps>li::before{counter-increment:st;content:counter(st);position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--indigo);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.dp-steps strong{color:var(--text);font-weight:700}
+body.dark .dp-steps>li{color:rgba(255,255,255,.75)}
+body.dark .dp-steps strong{color:#fff}
+.dp-steplead{font-size:13.5px;color:var(--text2);line-height:1.55}
+body.dark .dp-steplead{color:rgba(255,255,255,.72)}
 .dp-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
 .dp-or-split{display:flex;align-items:center;gap:10px;margin:18px 0 14px}
 .dp-or-split-line{flex:1;height:1px;background:rgba(99,102,241,.18)}
@@ -1383,14 +1391,26 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">09:50 ICN</div>
           <div class="dp-title">Arrive Incheon — Terminal 1</div>
-          <div class="dp-desc">Immigration (fill in the e-Arrival Card online within 3 days before landing to skip the paper form), collect bags, then pick up T-money cards at the convenience store and activate eSIMs.</div>
+          <div class="dp-desc"><div class="dp-steplead">Landing routine at ICN Terminal 1:</div>
+            <ol class="dp-steps">
+              <li>Fill the <strong>e-Arrival Card</strong> online (e-arrivalcard.go.kr) within 3 days before landing — skips the paper form.</li>
+              <li>Follow signs to <strong>Immigration</strong> → fingerprints + photo, a couple of quick questions.</li>
+              <li>Collect your bags at baggage claim.</li>
+              <li>Activate your <strong>eSIM</strong> (or grab a tourist SIM / WOWPASS card at the arrivals hall).</li>
+              <li>Buy <strong>T-money cards</strong> and top up ~₩30,000 each at a CU / GS25 convenience store.</li>
+            </ol></div>
           <div class="dp-tags"><span class="dp-tag">Arrival</span><span class="dp-tag">T-money</span><span class="dp-tag">eSIM</span></div>
         </div>
         <div class="dp-item">
           <div class="dp-dot"></div>
           <div class="dp-time">~10:45</div>
           <div class="dp-title">Head to WECO STAY Gangnam</div>
-          <div class="dp-desc">AREX to Seoul Station then Line 9 toward Sinbanpo, or an airport limousine bus toward the Express Bus Terminal. Official check-in is 16:00 — drop bags in the hotel's luggage storage (1F Rm 103, from 10:00) and head straight out.</div>
+          <div class="dp-desc"><div class="dp-steplead"><strong>ICN → WECO STAY (Banpo)</strong> — two easy ways:</div>
+            <ol class="dp-steps">
+              <li><strong>AREX + subway (~70 min):</strong> AREX train (All-Stop, T-money OK, or Express) to <strong>Seoul Station</strong> → transfer to <strong>Line 9</strong> → ride to <strong>Sinbanpo</strong> or <strong>Express Bus Terminal</strong> → 5–10 min walk to the hotel.</li>
+              <li><strong>Or airport limousine bus (~80 min, easiest with luggage):</strong> from the ICN arrivals hall, take a bus toward the <strong>Express Bus Terminal / Banpo</strong> area → short walk or taxi to the hotel.</li>
+              <li>At the hotel: official check-in is <strong>16:00</strong> — drop bags in <strong>luggage storage (1F, Room 103, from 10:00)</strong> and head straight back out.</li>
+            </ol></div>
           <div class="dp-tags"><span class="dp-tag">Transit</span><span class="dp-tag">Bag drop</span></div>
         </div>
         <div class="dp-item">
@@ -1769,7 +1789,13 @@ body.dark .polaroid-caption{color:#4c465e}
           <div class="dp-dot key"></div>
           <div class="dp-time">~12:45</div>
           <div class="dp-title">Check Out · Head to Incheon — Terminal 1</div>
-          <div class="dp-desc">Check-out is 11:00. Easiest from Seocho: an airport limousine bus from the Express Bus Terminal, or Line 9 → Seoul Station → AREX. Aim to be at ICN T1 by 13:45 — three hours before departure, with buffer for the tax-refund kiosks.</div>
+          <div class="dp-desc"><div class="dp-steplead"><strong>WECO STAY → ICN Terminal 1</strong> — leave by ~12:45, be at ICN by 13:45:</div>
+            <ol class="dp-steps">
+              <li>Check out by <strong>11:00</strong> (store bags at the hotel if you want a last stroll).</li>
+              <li><strong>Airport limousine bus:</strong> catch it at the <strong>Express Bus Terminal</strong> → direct to ICN T1 (~70–80 min, luggage-friendly).</li>
+              <li><strong>Or AREX:</strong> <strong>Line 9</strong> to <strong>Seoul Station</strong> → AREX train to ICN T1 (~70 min).</li>
+              <li>At ICN: check in → hit the <strong>tax-refund kiosks</strong> (passport + receipts over ₩15,000) → security &amp; duty free.</li>
+            </ol></div>
           <div class="dp-tags"><span class="dp-tag">Transit</span></div>
         </div>
         <div class="dp-item">
@@ -2643,6 +2669,23 @@ body.dark .polaroid-caption{color:#4c465e}
 <div id="tab-tips" class="tab-content">
 
   <div class="sh"><h2>💡 Seoul Survival Guide</h2><p>Everything useful before you go</p></div>
+
+  <div class="tip-card">
+    <h3>🧭 From Your Hotel — Getting Around</h3>
+    <div class="dp-desc"><div class="dp-steplead">Your base is <strong>WECO STAY (Banpo)</strong>. Nearest stations: <strong>Sinbanpo</strong> (Line 9) and the big <strong>Express Bus Terminal</strong> interchange (Lines 3 · 7 · 9) — that hub reaches almost everywhere. Golden rule: <strong>open Naver Map, type the place, tap the route</strong> — it's always right. The quick direct ones:</div>
+      <ol class="dp-steps">
+        <li><strong>Seochon / Gyeongbokgung</strong> (Sat) — Line 3 → <strong>Gyeongbokgung</strong>, direct, ~20 min.</li>
+        <li><strong>Insadong / Anguk</strong> (Tue) — Line 3 → <strong>Anguk</strong>, direct, ~22 min.</li>
+        <li><strong>Sinsa — Acid House / Garosu-gil</strong> (Sat) — Line 3 → <strong>Sinsa</strong>, 1 stop (~4 min).</li>
+        <li><strong>Belle Studio — Maebong</strong> (Fri) — Line 3 south → <strong>Maebong</strong>, direct ~10 min, Exit 4.</li>
+        <li><strong>CheongA Clinic — Cheongdam</strong> (Thu) — Line 7 → <strong>Cheongdam</strong>, direct, ~15 min.</li>
+        <li><strong>Seongsu</strong> (Mon) — Line 7 → transfer Line 2 at <strong>Konkuk Univ</strong> → Seongsu, ~30 min.</li>
+        <li><strong>Seongbuk-dong</strong> (Sun) — Line 3 → transfer Line 4 at <strong>Chungmuro</strong> → <strong>Hansung Univ</strong>, ~35 min.</li>
+        <li><strong>Yeonnam / Hongdae</strong> — check Naver Map (Line 9 + a transfer), or a Kakao T (~30–40 min).</li>
+        <li><strong>Itaewon / Hannam</strong> — just across the river; a <strong>Kakao T taxi is quickest</strong> (~15 min).</li>
+        <li><strong>Banpo Han River</strong> — ~15-min walk south, or Sinbanpo (Line 9) Exit.</li>
+      </ol></div>
+  </div>
 
   <div class="two-col">
     <div class="tc">
