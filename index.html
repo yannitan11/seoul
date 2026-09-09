@@ -1576,22 +1576,6 @@ body.dark .cal-day.nyc{background:var(--seoul-soft);color:var(--text)}
 .cal-day.nyc:hover{transform:translateY(-1px)}
 .hotel-icon.ny{background:var(--accent-soft)}
 
-/* ── DAILY TEMPERATURE STRIP ────────────────────────────────────────
-   Eight small blocks, one per day. Flat surfaces on hairlines, like
-   every other block on the page. */
-.daily-temps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:22px}
-@media(max-width:820px){.daily-temps{grid-template-columns:repeat(2,1fr)}}
-.dt-card{background:var(--surface);border:1px solid var(--sep);border-radius:var(--r2);padding:13px 14px}
-.dt-dhead{display:flex;align-items:baseline;justify-content:space-between;
-  margin-bottom:8px;padding-bottom:7px;border-bottom:1px solid var(--sep)}
-.dt-day{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
-.dt-date{font-size:12px;color:var(--muted);font-weight:500;font-variant-numeric:tabular-nums}
-.dt-row{display:flex;align-items:center;justify-content:space-between;padding:2.5px 0;font-variant-numeric:tabular-nums}
-.dt-lbl{font-size:12px;color:var(--text2)}
-.dt-val{font-size:16px;font-weight:700;color:var(--text)}
-.dt-val.dt-mid{color:var(--text2);font-weight:600}
-.dt-val.dt-lo{color:var(--accent);font-weight:700}
-
 /* ── TRIP-AT-A-GLANCE TIMELINE ──────────────────────────────────────
    A single hairline with collapsible groups hung off it. */
 .timeline{position:relative;padding-left:26px}
@@ -1790,57 +1774,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
     </div>
   </div>
 
-  <div class="callout">📉 <strong>Day → night swing.</strong> Autumn Seoul is dry and clear — mild afternoons, then a fast drop after sunset (~18:00), often a ~10°C gap between the daytime high and the pre-dawn low. That's the whole case for layers. Figures below are typical mid-October averages; the real forecast lands ~2 weeks before you fly.</div>
-  <div class="daily-temps">
-    <div class="dt-card">
-      <div class="dt-dhead"><span class="dt-day">Sat</span><span class="dt-date">10 Oct</span></div>
-      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">21°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">14°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">11°</span></div>
-    </div>
-    <div class="dt-card">
-      <div class="dt-dhead"><span class="dt-day">Sun</span><span class="dt-date">11 Oct</span></div>
-      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">21°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">14°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">11°</span></div>
-    </div>
-    <div class="dt-card">
-      <div class="dt-dhead"><span class="dt-day">Mon</span><span class="dt-date">12 Oct</span></div>
-      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">20°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">14°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">10°</span></div>
-    </div>
-    <div class="dt-card">
-      <div class="dt-dhead"><span class="dt-day">Tue</span><span class="dt-date">13 Oct</span></div>
-      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">20°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">13°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">10°</span></div>
-    </div>
-    <div class="dt-card">
-      <div class="dt-dhead"><span class="dt-day">Wed</span><span class="dt-date">14 Oct</span></div>
-      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">19°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">13°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">9°</span></div>
-    </div>
-    <div class="dt-card">
-      <div class="dt-dhead"><span class="dt-day">Thu</span><span class="dt-date">15 Oct</span></div>
-      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">19°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">13°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">9°</span></div>
-    </div>
-    <div class="dt-card">
-      <div class="dt-dhead"><span class="dt-day">Fri</span><span class="dt-date">16 Oct</span></div>
-      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">18°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">12°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">8°</span></div>
-    </div>
-    <div class="dt-card">
-      <div class="dt-dhead"><span class="dt-day">Sat</span><span class="dt-date">17 Oct</span></div>
-      <div class="dt-row"><span class="dt-lbl">☀️ Day</span><span class="dt-val">18°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌆 Eve</span><span class="dt-val dt-mid">12°</span></div>
-      <div class="dt-row"><span class="dt-lbl">🌙 Night</span><span class="dt-val dt-lo">8°</span></div>
-    </div>
-  </div>
+  <div class="callout">📉 <strong>Day → night swing.</strong> Autumn Seoul is dry and clear — mild afternoons, then a fast drop after sunset (~18:00), often a ~10°C gap between the daytime high and the pre-dawn low. That's the whole case for layers — check the real forecast ~2 weeks before you fly.</div>
 
   <div class="flt-section-label">✈ Flights</div>
   <div class="flt-cards-row" style="grid-template-columns:1fr 1fr">
