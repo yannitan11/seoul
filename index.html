@@ -1684,6 +1684,23 @@ body.dark .pm-dinner{background:rgba(196,85,77,.22);color:#e79289}
 /* The little arrow between two airports masks the rule behind it with a
    hardcoded white pill, which turns into a white block in dark mode. */
 .flt-arrow-line::after{background:var(--surface)}
+/* ── FULL ITINERARY (overview) ───────────────────────────────────────
+   The overview borrows the real day panel out of the Seoul tab rather
+   than keeping a second copy, so only one of the two hosts shows it at
+   a time. */
+.itin{margin-bottom:8px}
+#itin-host .day-panel{display:none}
+#itin-host .day-panel.active{display:block}
+#itin-pills .day-pill.active{
+  background-color:var(--accent-strong)!important;background-image:none!important;
+  border-color:var(--accent-strong)!important;
+}
+#itin-pills .day-pill.active .dp-pill-date,
+#itin-pills .day-pill.active .dp-pill-label{color:#fff!important}
+body.dark #itin-pills .day-pill.active{background-color:var(--accent-strong)!important}
+body.dark #itin-pills .day-pill.active .dp-pill-date,
+body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
+#itin-host .dp-time{background:var(--accent-soft);color:var(--accent)}
 </style>
 </head>
 <body>
@@ -1886,33 +1903,11 @@ body.dark .pm-dinner{background:rgba(196,85,77,.22);color:#e79289}
 
   </div>
 
-  <div class="sh"><h2>🗺️ Trip at a Glance</h2><p>Eight days in Seoul</p></div>
+  <div class="sh"><h2>🗺️ Full Itinerary</h2><p>Every day of the trip — pick a day</p></div>
 
-  <div class="card">
-    <div class="timeline">
-
-      <div class="tl-loc" onclick="toggleTlGroup(this)"><span class="tl-loc-label">✈️ &nbsp;Departure</span><span class="tl-loc-line"></span><span class="tl-loc-chevron">▼</span></div>
-      <div class="tl-group-body">
-        <div class="tl-item"><div class="tl-dot key"></div><div class="tl-date"><span class="tl-daynum">Day 1 · </span>Sat, 10 Oct</div><div class="tl-event">Depart Singapore → Seoul</div><div class="tl-detail">SQ 612 · SIN 02:25 → ICN 09:50 · Economy · Changi T2 · Red-eye — sleep on the plane, land with the whole day ahead</div></div>
-      </div>
-
-      <div class="tl-loc" onclick="toggleTlGroup(this)"><span class="tl-loc-label">🇰🇷 &nbsp;Seoul</span><span class="tl-loc-line"></span><span class="tl-loc-chevron">▼</span></div>
-      <div class="tl-group-body">
-        <div class="tl-item"><div class="tl-dot key"></div><div class="tl-date"><span class="tl-daynum">Day 1 · </span>Sat, 10 Oct</div><div class="tl-event">Arrival · Seochon · Garosu-gil</div><div class="tl-detail">Tosokchon lunch · OFR + GRANHAND · Seochon café street · check-in · Ralph Lauren + ARKET on Garosu-gil · Acid House dinner</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 2 · </span>Sun, 11 Oct</div><div class="tl-event">Yeonnam · Seongbuk-dong</div><div class="tl-detail">Noon brunch in Yeonnam (Long Vacation + stationery) · Seongbuk cafés + Chaekbonyang + walk street · Pig Restaurant 2 at 8pm</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 3 · </span>Mon, 12 Oct</div><div class="tl-event">Shuen Day 🤝 — Full Day</div><div class="tl-detail">Yanni × Shuen all day, plans flexible · Maddy's solo adventure day · optional evening regroup</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 4 · </span>Tue, 13 Oct</div><div class="tl-event">Insadong · Anguk · Odarijip Supper</div><div class="tl-detail">Insadong crafts + Ssamziegil · Solsot sotbap lunch · Anguk hanok cafés · Banpo sunset + ramyeon (small bites) · Odarijip ganjang gejang supper</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-date"><span class="tl-daynum">Day 5 · </span>Wed, 14 Oct</div><div class="tl-event">Seongsu + Seoul Forest</div><div class="tl-detail">Halmeoni Recipe lunch · Seoul Forest + KWANGYA (SM) · Seongsu shops (Verish, salt bread) · LCDC + photobooth · Jojo Kalguksu dinner · Olive Young N</div></div>
-        <div class="tl-item"><div class="tl-dot key"></div><div class="tl-date"><span class="tl-daynum">Day 6 · </span>Thu, 15 Oct</div><div class="tl-event">CheongA Clinic · Hannam Shopping</div><div class="tl-detail">Nammae Gukbap lunch · CheongA Clinic 14:30 (both, passports!) · Hannam shopping (MM6, NUMBERING, Sounds, Monoha) · Cheongye Dakhanmari dinner</div></div>
-        <div class="tl-item"><div class="tl-dot key"></div><div class="tl-date"><span class="tl-daynum">Day 7 · </span>Fri, 16 Oct</div><div class="tl-event">Belle Studio · Cafe Pokpo · Farewell</div><div class="tl-detail">Brunch near home · Belle Studio 13:00–15:00 (Dogok) · Cafe Pokpo waterfall · OMONJA monjayaki farewell dinner + Banpo Bridge fountain</div></div>
-      </div>
-
-      <div class="tl-loc" onclick="toggleTlGroup(this)"><span class="tl-loc-label">🛬 &nbsp;Return</span><span class="tl-loc-line"></span><span class="tl-loc-chevron">▼</span></div>
-      <div class="tl-group-body">
-        <div class="tl-item"><div class="tl-dot key"></div><div class="tl-date"><span class="tl-daynum">Day 8 · </span>Sat, 17 Oct</div><div class="tl-event">Fly Home — ICN → Singapore</div><div class="tl-detail">SQ 601 · ICN 16:45 → SIN 22:00 · At the airport by 13:45 for check-in + tax refund · 안녕, Seoul!</div></div>
-      </div>
-
-    </div>
+  <div class="itin">
+    <div class="day-pills" id="itin-pills"></div>
+    <div id="itin-host"></div>
   </div>
 
 </div>
@@ -1935,6 +1930,7 @@ body.dark .pm-dinner{background:rgba(196,85,77,.22);color:#e79289}
     <button class="day-pill" onclick="switchDay('seoul',8,this)"><span class="dp-pill-date">Sat 17 Oct</span><span class="dp-pill-label">Fly Home</span></button>
   </div>
 
+  <div class="day-host" id="seoul-day-host">
   <!-- DAY 1 -->
   <div class="day-panel active" id="seoul-day-1">
     <div class="card">
@@ -2369,6 +2365,7 @@ body.dark .pm-dinner{background:rgba(196,85,77,.22);color:#e79289}
       </div>
     </div>
   </div>
+  </div><!-- /seoul-day-host -->
 
 </div>
 
@@ -3494,11 +3491,98 @@ function toggleTlGroup(header) {
   header.nextElementSibling.classList.toggle('collapsed');
 }
 function switchTab(tab, btn) {
+  // A day panel shown in the overview is the SAME node the Seoul tab owns —
+  // hand it back before leaving, so both places always render something.
+  returnItinPanel();
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
   btn.classList.add('active');
+  if (tab === 'overview') showItinDay(itinDay);
+  // On narrow screens the tab row scrolls; keep the selected tab visible.
+  const track = document.querySelector('.tabs-inner');
+  if (track) revealPill(track, btn);
 }
+
+/* ── FULL ITINERARY: borrows the Seoul tab's day panels, never copies them ── */
+let itinDay = 1;
+
+function returnItinPanel() {
+  const host = document.getElementById('itin-host');
+  if (!host) return;
+  [...host.children].forEach(panel => {
+    const home = document.getElementById(panel.dataset.home);
+    if (!home) return;
+    // Put it back in its original slot so the Seoul tab keeps day order...
+    const after = [...home.children].find(c => +c.dataset.order > +panel.dataset.order);
+    home.insertBefore(panel, after || null);
+    // ...and let the Seoul tab's own pills decide what's showing there.
+    syncHostActive(home);
+  });
+}
+
+// The Seoul tab owns which of its days is visible — re-assert that after a
+// panel comes back, or every day the overview touched stays expanded.
+function syncHostActive(home) {
+  const tab = home.closest('.tab-content');
+  if (!tab) return;
+  const pills = [...tab.querySelectorAll('.day-pills .day-pill')];
+  let idx = pills.findIndex(p => p.classList.contains('active'));
+  if (idx < 0) idx = 0;
+  [...home.children].forEach((p, i) => p.classList.toggle('active', i === idx));
+}
+
+function buildItinPills() {
+  const pills = document.getElementById('itin-pills');
+  const src = document.querySelectorAll('#tab-seoul .day-pills .day-pill');
+  pills.innerHTML = '';
+  src.forEach((p, i) => {
+    const b = document.createElement('button');
+    b.className = 'day-pill' + (i + 1 === itinDay ? ' active' : '');
+    b.innerHTML = p.innerHTML;
+    b.onclick = () => {
+      itinDay = i + 1;
+      pills.querySelectorAll('.day-pill').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      showItinDay(itinDay);
+      revealPill(pills, b);
+    };
+    pills.appendChild(b);
+  });
+  const on = pills.querySelector('.day-pill.active');
+  if (on) revealPill(pills, on);
+}
+
+// Centre the selected pill in its own scroller. Deliberately NOT
+// scrollIntoView — that would drag the whole page as well.
+function revealPill(track, pill) {
+  const t = track.getBoundingClientRect(), p = pill.getBoundingClientRect();
+  const target = track.scrollLeft + (p.left - t.left) - (t.width - p.width) / 2;
+  const max = track.scrollWidth - track.clientWidth;
+  track.scrollLeft = Math.max(0, Math.min(target, max));
+}
+
+function showItinDay(num) {
+  const host = document.getElementById('itin-host');
+  const panel = document.getElementById('seoul-day-' + num);
+  if (!host || !panel) return;
+  returnItinPanel();
+  host.appendChild(panel);
+  document.querySelectorAll('#itin-host .day-panel').forEach(p => p.classList.remove('active'));
+  panel.classList.add('active');
+}
+
+(function initItinerary() {
+  // Remember where each panel lives and in what order, so it can go home.
+  document.querySelectorAll('.day-host').forEach(host => {
+    [...host.children].forEach((panel, i) => {
+      panel.dataset.home = host.id;
+      panel.dataset.order = i;
+    });
+  });
+  buildItinPills();
+  showItinDay(1);
+})();
 
 function switchDay(tab, num, btn) {
   const panels = document.querySelectorAll('[id^="' + tab + '-day-"]');
