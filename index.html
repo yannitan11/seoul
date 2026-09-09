@@ -1685,6 +1685,35 @@ body.dark #itin-pills .day-pill.active{background-color:var(--accent-strong)!imp
 body.dark #itin-pills .day-pill.active .dp-pill-date,
 body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
 #itin-host .dp-time{background:var(--accent-soft);color:var(--accent)}
+/* ── PLACES: the second, quieter filter row ──────────────────────────
+   Kind of place is the primary choice and keeps the filled chip; area
+   is a refinement on top of it, so its chips are smaller and its
+   selection is a tint rather than a fill. */
+.places-areas{display:flex;align-items:center;gap:10px;margin:-6px 0 4px}
+.places-areas-k{
+  flex-shrink:0;font-size:11px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);padding-bottom:12px;
+}
+/* Seven area chips overflow a desktop row and the last one gets clipped,
+   so this row wraps instead of scrolling — every area stays visible. */
+.places-areas .places-cats{flex-wrap:wrap;overflow-x:visible;row-gap:6px;padding-bottom:12px}
+.places-areas .places-cat{font-size:11.5px;padding:5px 11px}
+.places-areas .places-cat.active{
+  background-color:var(--accent-soft)!important;background-image:none!important;
+  border-color:var(--accent)!important;color:var(--accent)!important;
+}
+body.dark .places-areas .places-cat.active{
+  background-color:var(--accent-soft)!important;color:var(--accent)!important;
+}
+@media(max-width:600px){
+  .places-areas{flex-direction:column;align-items:flex-start;gap:0}
+  .places-areas-k{padding-bottom:6px}
+  .places-areas .places-cats{width:100%}
+}
+.places-empty{
+  font-size:13px;color:var(--muted);line-height:1.6;
+  padding:18px 16px;text-align:center;
+}
 </style>
 </head>
 <body>
@@ -2314,13 +2343,30 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
       <button class="places-cat active" onclick="filterPlaces('seoul-places','must',this)">🍜 Must-Eats</button>
       <button class="places-cat" onclick="filterPlaces('seoul-places','rec',this)">⭐ Recommended</button>
       <button class="places-cat" onclick="filterPlaces('seoul-places','cafe',this)">☕ Cafés & Dessert</button>
+      <button class="places-cat" onclick="filterPlaces('seoul-places','shop',this)">🛍 Shopping</button>
       <button class="places-cat" onclick="filterPlaces('seoul-places','all',this)">All</button>
     </div>
 
+    <!-- Second, quieter filter: which part of the city. Applies on top of
+         whatever kind of place is selected above. -->
+    <div class="places-areas">
+      <span class="places-areas-k">Area</span>
+      <div class="places-cats">
+        <button class="places-cat active" onclick="filterPlacesArea('seoul-places','all',this)">All areas</button>
+        <button class="places-cat" onclick="filterPlacesArea('seoul-places','seongsu',this)">🌳 Seongsu</button>
+        <button class="places-cat" onclick="filterPlacesArea('seoul-places','jongno',this)">🏯 Jongno & Seochon</button>
+        <button class="places-cat" onclick="filterPlacesArea('seoul-places','gangnam',this)">🌉 Gangnam & river</button>
+        <button class="places-cat" onclick="filterPlacesArea('seoul-places','hannam',this)">🍢 Itaewon & Hannam</button>
+        <button class="places-cat" onclick="filterPlacesArea('seoul-places','yeonnam',this)">🌸 Yeonnam & west</button>
+        <button class="places-cat" onclick="filterPlacesArea('seoul-places','central',this)">🏮 Central & Seongbuk</button>
+      </div>
+    </div>
+
     <div class="places-list" id="seoul-places">
+      <div class="places-empty" id="seoul-places-empty" hidden>Nothing here in that area. Try <strong>All areas</strong>, or widen the filter above.</div>
 
       <!-- MUST EATS -->
-      <div class="place-row" data-cat="must">
+      <div class="place-row" data-cat="must" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍗</div>
           <div class="place-info">
@@ -2336,7 +2382,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="must">
+      <div class="place-row" data-cat="must" data-loc="hannam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🥓</div>
           <div class="place-info">
@@ -2352,7 +2398,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="must">
+      <div class="place-row" data-cat="must" data-loc="seongsu">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍚</div>
           <div class="place-info">
@@ -2368,7 +2414,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="must">
+      <div class="place-row" data-cat="must" data-loc="central">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🐔</div>
           <div class="place-info">
@@ -2384,7 +2430,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="must">
+      <div class="place-row" data-cat="must" data-loc="gangnam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🥞</div>
           <div class="place-info">
@@ -2417,7 +2463,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
       </div>
 
       <!-- RECOMMENDED -->
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🥘</div>
           <div class="place-info">
@@ -2432,7 +2478,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="central">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍜</div>
           <div class="place-info">
@@ -2447,7 +2493,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="central">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🌶</div>
           <div class="place-info">
@@ -2462,7 +2508,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="must">
+      <div class="place-row" data-cat="must" data-loc="central">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🐔</div>
           <div class="place-info">
@@ -2478,7 +2524,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="must">
+      <div class="place-row" data-cat="must" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍚</div>
           <div class="place-info">
@@ -2494,7 +2540,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="cafe">
+      <div class="place-row" data-cat="cafe" data-loc="yeonnam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🌴</div>
           <div class="place-info">
@@ -2510,7 +2556,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="seongsu">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🎞️</div>
           <div class="place-info">
@@ -2526,7 +2572,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="shop" data-loc="seongsu">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">👞</div>
           <div class="place-info">
@@ -2542,7 +2588,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="shop" data-loc="seongsu">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🪨</div>
           <div class="place-info">
@@ -2558,7 +2604,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="shop" data-loc="hannam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🤍</div>
           <div class="place-info">
@@ -2574,7 +2620,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="shop" data-loc="hannam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">💍</div>
           <div class="place-info">
@@ -2590,7 +2636,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="gangnam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍗</div>
           <div class="place-info">
@@ -2605,7 +2651,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍺</div>
           <div class="place-info">
@@ -2620,7 +2666,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="gangnam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🌅</div>
           <div class="place-info">
@@ -2636,7 +2682,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="central">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🏘️</div>
           <div class="place-info">
@@ -2658,7 +2704,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="yeonnam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🌳</div>
           <div class="place-info">
@@ -2678,7 +2724,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🏯</div>
           <div class="place-info">
@@ -2699,7 +2745,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🎋</div>
           <div class="place-info">
@@ -2719,7 +2765,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🦆</div>
           <div class="place-info">
@@ -2735,7 +2781,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="hannam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍲</div>
           <div class="place-info">
@@ -2751,7 +2797,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="seongsu">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍜</div>
           <div class="place-info">
@@ -2767,7 +2813,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="gangnam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🦀</div>
           <div class="place-info">
@@ -2783,7 +2829,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="shop" data-loc="seongsu">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🛍️</div>
           <div class="place-info">
@@ -2799,7 +2845,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="hannam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🏙️</div>
           <div class="place-info">
@@ -2819,7 +2865,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="rec" data-loc="seongsu">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🥩</div>
           <div class="place-info">
@@ -2835,7 +2881,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="rec">
+      <div class="place-row" data-cat="shop" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🕯️</div>
           <div class="place-info">
@@ -2851,7 +2897,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="cafe">
+      <div class="place-row" data-cat="cafe" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍵</div>
           <div class="place-info">
@@ -2869,7 +2915,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
 
 
       <!-- CAFES -->
-      <div class="place-row" data-cat="cafe">
+      <div class="place-row" data-cat="cafe" data-loc="gangnam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🥯</div>
           <div class="place-info">
@@ -2884,7 +2930,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="cafe">
+      <div class="place-row" data-cat="cafe" data-loc="gangnam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🍰</div>
           <div class="place-info">
@@ -2899,7 +2945,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="cafe">
+      <div class="place-row" data-cat="cafe" data-loc="seongsu">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">☕</div>
           <div class="place-info">
@@ -2914,7 +2960,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="cafe">
+      <div class="place-row" data-cat="cafe" data-loc="jongno">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">📚</div>
           <div class="place-info">
@@ -2930,7 +2976,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="cafe">
+      <div class="place-row" data-cat="cafe" data-loc="seongsu">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">🥐</div>
           <div class="place-info">
@@ -2946,7 +2992,7 @@ body.dark #itin-pills .day-pill.active .dp-pill-label{color:#16151a!important}
         </div>
       </div>
 
-      <div class="place-row" data-cat="cafe">
+      <div class="place-row" data-cat="cafe" data-loc="yeonnam">
         <div class="place-header" onclick="togglePlace(this)">
           <div class="place-thumb" style="background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:20px">💧</div>
           <div class="place-info">
@@ -3528,12 +3574,43 @@ function switchDay(tab, num, btn) {
   btn.classList.add('active');
 }
 
+/* Food & Places has two independent filters — what kind of place it is, and
+   which part of the city it is in. Both apply at once, so either can be left
+   wide open. */
+const placeFilter = { cat: 'must', area: 'all' };
+
 function filterPlaces(listId, cat, btn) {
-  document.getElementById(listId).querySelectorAll('.place-row').forEach(r => {
-    r.style.display = (cat === 'all' || r.dataset.cat === cat) ? '' : 'none';
-  });
+  placeFilter.cat = cat;
+  markPlaceChip(btn);
+  applyPlaceFilter(listId);
+}
+
+function filterPlacesArea(listId, area, btn) {
+  placeFilter.area = area;
+  markPlaceChip(btn);
+  applyPlaceFilter(listId);
+}
+
+// Each chip row owns its own selection, so only clear the row it came from.
+function markPlaceChip(btn) {
   btn.closest('.places-cats').querySelectorAll('.places-cat').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+}
+
+function applyPlaceFilter(listId) {
+  const list = document.getElementById(listId);
+  if (!list) return;
+  let shown = 0;
+  list.querySelectorAll('.place-row').forEach(r => {
+    const ok = (placeFilter.cat === 'all' || r.dataset.cat === placeFilter.cat) &&
+               (placeFilter.area === 'all' || r.dataset.area === placeFilter.area ||
+                r.dataset.loc === placeFilter.area);
+    r.style.display = ok ? '' : 'none';
+    if (ok) shown++;
+  });
+  // Two filters can rule everything out — say so instead of an empty card.
+  const empty = document.getElementById(listId + '-empty');
+  if (empty) empty.hidden = shown > 0;
 }
 
 function toggleTip(header) {
